@@ -42,6 +42,12 @@
   }
 }
 
+h1.title {
+  font-family: $main_font;
+  @include font-size(25);
+  text-align: center;
+}
+
 body, #page {
   height:100%; // Page height fills the screen and footer at the bottom.
 }
