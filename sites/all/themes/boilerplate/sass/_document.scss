@@ -45,10 +45,6 @@ audio:not([controls]) {
   @include element-invisible-focusable;
 }
 
-.logo {
-  max-height: 50px;
-  float: left;
-}
 //site Name
 #site-name {
   @include font-size(38);

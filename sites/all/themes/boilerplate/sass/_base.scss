@@ -7,25 +7,15 @@
 //
 // Links
 //
-a {
-  color: $link_color;
-  &:link {
-  }
-  &:visited {
-    color: $visited_link_color;
-  }
-  &:hover {
-    color: $active_link_color;
-  }
-  &:focus {
-    color: $active_link_color;
-    outline: thin dotted;
-  }
-  &:hover, &:active {
-    color: $active_link_color;
-    text-decoration: underline;
-    outline: 0; // Improve readability when focused and hovered in all browsers: h5bp.com/h
-  }
+a,a:visited,a:hover,a:active{
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+	position:relative;
+  transition:0.5s color ease;
+	text-decoration:none;
+}
+a:hover{
+	color:#d73444;
 }
 
 #navigation {
@@ -54,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3em;
   color: $header_text_color;
   @include breakpoint($mobile) {
-    font-family: Arial, sans-serif;
+    font-family: $main-font;
     line-height: 1.5;
     @include font-size(16);
     background: #fff;
@@ -65,8 +55,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include font-size(28);
-  font-weight: 300;
+  @include font-size(35);
+  font-weight: 500;
   padding: 0 0 0.5em;
   margin: 0;
 }

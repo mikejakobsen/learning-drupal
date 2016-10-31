@@ -2,7 +2,7 @@
   <div class="node-inner">
     <header>
         <?php if (!$page): ?>
-      <h2 class="text-center"<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <h2 class=""<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php endif; ?>
 
       <?php print $user_picture; ?>

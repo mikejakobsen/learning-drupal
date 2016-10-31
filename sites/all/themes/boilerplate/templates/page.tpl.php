@@ -1,11 +1,14 @@
-<div id="page" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="container" id="page" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <!-- ______________________ HEADER _______________________ -->
-  <header id="header">
+  <header class="row" id="header">
+    <div class="col-xs-2">
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
         <img class="logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
       </a>
     <?php endif; ?>
+    </div>
+    <div class="col-xs-10">
     <?php if ($site_name || $site_slogan): ?>
       <div id="name-and-slogan">
         <?php if ($site_name): ?>
@@ -29,19 +32,24 @@
         <?php print render($page['header']); ?>
       </div>
     <?php endif; ?>
+  </div>
   </header> <!-- /header -->
 
 <!-- ______________________ Nav _______________________ -->
    <?php if ($main_menu || $secondary_menu || $page['navbar']): ?>
-      <nav id="navigation" class="menu <?php !empty($main_menu) ? print "with-primary" : ''; !empty($secondary_menu) ? print " with-secondary" : ''; ?>">
-        <?php print theme('links', array('links' => $main_menu, 'attributes' => array('id' => 'primary', 'class' => array('links', 'clearfix', 'main-menu')))); ?>
-        <?php print theme('links', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary', 'class' => array('links', 'clearfix', 'sub-menu')))); ?>
-        <?php if ($page['navbar']): ?>
-          <div id="navbar" class="clear">
-            <?php print render($page['navbar']); ?>
-          </div>
-        <?php endif; ?>
-      </nav>
+    <div class="row">
+      <div class="col-xs-12">
+        <nav id="navigation" class="menu <?php !empty($main_menu) ? print "with-primary" : ''; !empty($secondary_menu) ? print " with-secondary" : ''; ?>">
+          <?php print theme('links', array('links' => $main_menu, 'attributes' => array('id' => 'primary', 'class' => array('links', 'clearfix', 'main-menu')))); ?>
+          <?php print theme('links', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary', 'class' => array('links', 'clearfix', 'sub-menu')))); ?>
+          <?php if ($page['navbar']): ?>
+            <div id="navbar" class="clear">
+              <?php print render($page['navbar']); ?>
+            </div>
+          <?php endif; ?>
+        </nav>
+      </div>
+    </div>
     <?php endif; ?>
 
 <!-- ______________________ Content _______________________ -->
@@ -81,7 +89,7 @@
     </div> <!-- /content-inner /content -->
 
     <?php if ($page['sidebar_first']): ?>
-      <aside id="sidebar-first" class="column sidebar first">
+      <aside class="col-xs-12 col-md-12" id="sidebar-first" class="column sidebar first">
         <div id="sidebar-first-inner" class="inner">
           <?php print render($page['sidebar_first']); ?>
         </div>
@@ -89,7 +97,7 @@
     <?php endif; ?> <!-- /sidebar-first -->
 
     <?php if ($page['sidebar_second']): ?>
-      <aside id="sidebar-second" class="column sidebar second">
+      <aside class="col-xs-12 col-md-3" id="sidebar-second" class="column sidebar second">
         <div id="sidebar-second-inner" class="inner">
           <?php print render($page['sidebar_second']); ?>
         </div>
@@ -98,9 +106,11 @@
 
   <!-- ______________________ FOOTER _______________________ -->
     <?php if ($page['footer']): ?>
-      <footer id="footer">
-        <?php print render($page['footer']); ?>
-      </footer> <!-- /footer -->
+      <div class="row">
+        <footer class="col-xs-12" id="footer">
+          <?php print render($page['footer']); ?>
+        </footer> <!-- /footer -->
+      </div>
     <?php endif; ?>
   </div> <!-- /main -->
 </div> <!-- /page -->

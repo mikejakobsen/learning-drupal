@@ -48,6 +48,11 @@ h1.title {
   text-align: center;
 }
 
+img.logo {
+  margin: 0 auto;
+  max-height: 80px;
+}
+
 body, #page {
   height:100%; // Page height fills the screen and footer at the bottom.
 }

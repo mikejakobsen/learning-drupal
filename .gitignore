@@ -34,3 +34,6 @@ xmlrpc.php
 /profiles
 /scripts
 /themes
+
+# Ignore the compiled CSS
+sites/all/themes/boilerplate/css
