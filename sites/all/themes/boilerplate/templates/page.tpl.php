@@ -89,7 +89,7 @@
     </div> <!-- /content-inner /content -->
 
     <?php if ($page['sidebar_first']): ?>
-      <aside class="col-xs-12 col-md-12" id="sidebar-first" class="column sidebar first">
+      <aside class="col-xs-12 col-md-3" id="sidebar-first" class="column sidebar first">
         <div id="sidebar-first-inner" class="inner">
           <?php print render($page['sidebar_first']); ?>
         </div>
@@ -97,7 +97,7 @@
     <?php endif; ?> <!-- /sidebar-first -->
 
     <?php if ($page['sidebar_second']): ?>
-      <aside class="col-xs-12 col-md-3" id="sidebar-second" class="column sidebar second">
+      <aside class="col-xs-12 col-lg-3" id="sidebar-second" class="column sidebar second">
         <div id="sidebar-second-inner" class="inner">
           <?php print render($page['sidebar_second']); ?>
         </div>
