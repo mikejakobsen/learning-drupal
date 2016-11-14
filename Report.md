@@ -36,6 +36,15 @@ For at integrere Facebook benyttes [Facebook SDK v. 4.0.23.](https://github.com/
 
 Modulet sammenligner dernæst e-mailen anvendt til Facebook profilen. Hvis Drupal applikationen allerede har en bruger med den pågældende email, bliver denne bruger dernæst logget ind. Ellers bliver en ny bruger tilføjet. Dernæst bliver brugeren billede gemt i *sites/default/files/pictures*. Modsat de fleste andre Facebook Login løsninger der ofte undlader at gemme profil billede, men derimod blot tilgår billederne via deres URL, der så bliver gemt i databasen.
 
+![User 1](assets/user.png)
+
+| uid | name         | pass                                                    | mail                                  | theme | signature | signature_format | created    | access     | login      | status | timezone      | language | picture | init              | data                       |
+|-----|--------------|---------------------------------------------------------|---------------------------------------|-------|-----------|------------------|------------|------------|------------|--------|---------------|----------|---------|-------------------|----------------------------|
+| 0   |              |                                                         |                                       |       |           | NULL             | 0          | 0          | 0          | 0      | NULL          |          | 0       |                   | NULL                       |
+| 1   | mike         | $S$DbON4.JDjSrdaELOslNUwJN9/6Id/V/XWbNRk.ORw26QWPQRFot5 | mike@jakobsen.dk                      |       |           | NULL             | 1477826754 | 1479130717 | 1479119429 | 1      | Europe/Berlin |          | 0       | mike@jakobsen.dk  | b:0;                       |
+| 41  | Martin Hjord | $S$DwBTippt6EmUvz2jNkPhiAYoULIBwYsdS9/ADRl.dJZT4kXzthA1 | hjorden@gmail.com                     |       |           | filtered_html    | 1479120328 | 1479120758 | 1479120492 | 1      |               |          | 45      | hjorden@gmail.com | a:1:{s:7:\contact\";i:1;}" |
+
+
 ### Coffee
 
 ![Coffee Gif](assets/coffee.gif)
