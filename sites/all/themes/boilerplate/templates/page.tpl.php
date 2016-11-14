@@ -1,14 +1,14 @@
 <div class="container" id="page" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <!-- ______________________ HEADER _______________________ -->
   <header class="row" id="header">
-    <div class="col-xs-2">
+    <div class="col-xs-4">
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
         <img class="logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
       </a>
     <?php endif; ?>
     </div>
-    <div class="col-xs-10">
+    <div class="col-xs-8">
     <?php if ($site_name || $site_slogan): ?>
       <div id="name-and-slogan">
         <?php if ($site_name): ?>
