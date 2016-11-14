@@ -1,5 +1,7 @@
 a.facebook-form {
-  background-color: $facebook-blue;
+  background-color: $facebook-blue !important;
+  border-radius: none;
+  color: white;
   display: block;
   padding: 5px;
   margin: 10px auto;
@@ -27,6 +29,16 @@ div {
 
 
 .toboggan-unified {
+  label {
+    border-radius: 20px;
+  }
+  input {
+    border-radius: 20px;
+    width: 60%
+  }
+  input[type="submit"] {
+    padding: 10px;
+  }
   #login-message {
     text-align: center;
   }
@@ -34,17 +46,14 @@ div {
     text-align: center;
     a {
       padding: .5em;
-      border: 1px #666 solid;
       background-color: #EEE;
       &:hover {
         background-color: #DDD;
       }
       &.lt-active {
         background-color: #FFF19A;
-        border: 2px #333 solid;
         &:hover {
           background-color: #FFF19A;
-          border: 2px #333 solid;
         }
       }
     }
@@ -52,4 +61,8 @@ div {
   &.login #register-form, &.register #login-form {
     display: none;
   }
+}
+
+.password-strength {
+  display: none !important;
 }

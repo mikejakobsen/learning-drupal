@@ -47,7 +47,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $main-font;
     line-height: 1.5;
     @include font-size(16);
-    background: #fff;
     color: #000;
     word-wrap: break-word;
     -webkit-text-size-adjust: none;
