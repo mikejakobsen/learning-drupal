@@ -1,4 +1,4 @@
-e Report
+p Report
 
 Mike Jakobsen
 http://www.mikejakobsen.com/drupal
@@ -37,8 +37,15 @@ Modulet sammenligner dernæst e-mailen anvendt til Facebook profilen. Hvis Drupa
 
 ### Coffee
 
-For at gøre Drupal applikationen nemmere at navigere. Benytter jeg indvidere Coffe modulet, for at gøre applikationen mere overskuelig.
+For at gøre Drupal applikationen nemmere at navigere. Benytter jeg indvidere Coffee modulet. Coffee modulet gør det muligt at navigere Drupals backend via tastaturet. Udvikleren Michael Moi lavede Coffee med inspiration fra Alfred til OSX, der gør det muligt at navigere computeren, via tastaturet. [Kilde](https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-coffee/12/04/2016/10291)
+Coffee skaber en lignende funktion ved at aktivere Coffee via *Alt+d*. For dernæst at skrive hvilken  funktionalitet,  eller kvillket sted i applikationen man ønsker at tilgå.
 
 ![Coffee Gif](assets/coffee.gif)
 
-Alt+d åbner dermed
+
+    Content -> Add Content -> Blog
+
+    /node/add/blog
+
+
+
