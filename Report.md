@@ -1,8 +1,14 @@
 # Report
 
-Mike Jakobsen
-http://www.mikejakobsen.com/drupal
+![Mike](http://www.mikejakobsen.com/mike.png)
 
+
+Mike Jakobsen
+URL: http://www.mikejakobsen.com/drupal
+
+[Github.com/mikejakobsen](http://www.github.com/mikejakobsen)
+[Dribbble.com/mikejakobsen](http://www.dribbble.com/mikejakobsen)
+[Twitter.com/mikejakobsen](http://www.twitter.com/mikejakobsen)
 
 Login
 
@@ -42,10 +48,10 @@ Modulet sammenligner dernæst e-mailen anvendt til Facebook profilen. Hvis Drupa
   FROM
       users
 ```
+### Users Table
 
 | uid | name         | pass                                                    | mail                                  | theme | signature | signature_format | created    | access     | login      | status | timezone      | language | picture | init              | data                       |
 |-----|--------------|---------------------------------------------------------|---------------------------------------|-------|-----------|------------------|------------|------------|------------|--------|---------------|----------|---------|-------------------|----------------------------|
-| 0   |              |                                                         |                                       |       |           | NULL             | 0          | 0          | 0          | 0      | NULL          |          | 0       |                   | NULL                       |
 | 1   | mike         | $S$DbON4.JDjSrdaELOslNUwJN9/6Id/V/XWbNRk.ORw26QWPQRFot5 | mike@jakobsen.dk                      |       |           | NULL             | 1477826754 | 1479130717 | 1479119429 | 1      | Europe/Berlin |          | 0       | mike@jakobsen.dk  | b:0;                       |
 | 41  | Martin Hjord | $S$DwBTippt6EmUvz2jNkPhiAYoULIBwYsdS9/ADRl.dJZT4kXzthA1 | hjorden@gmail.com                     |       |           | filtered_html    | 1479120328 | 1479120758 | 1479120492 | 1      |               |          | 45      | hjorden@gmail.com | a:1:{s:7:\contact\";i:1;}" |
 
