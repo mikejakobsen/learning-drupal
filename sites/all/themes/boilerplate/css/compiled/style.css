@@ -881,6 +881,16 @@ tr.odd {
   background: #fff;
 }
 
+.login #login-links a {
+  border-radius: 20px;
+}
+.login .description {
+  display: none;
+}
+.login .form-actions input {
+  border-radius: 10px;
+}
+
 @media print {
   * {
     background: transparent !important;

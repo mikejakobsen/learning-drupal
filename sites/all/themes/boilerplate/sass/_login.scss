@@ -1,0 +1,28 @@
+////////////////////////////////////////////////////////////////////////////////
+// Login
+// --------------------
+// This partial defines the styles for Login and Register
+//
+////////////////////////////////////////////////////////////////////////////////
+
+.login {
+  #login-message {
+  }
+  #login-links {
+    a {
+      border-radius: 20px;
+    }
+  }
+  #login-form {
+
+  }
+  .description {
+  display: none;
+  }
+  .form-item {
+  }
+  .form-actions input {
+    border-radius: 10px;
+  }
+}
+
