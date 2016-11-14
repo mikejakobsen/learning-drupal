@@ -1,0 +1,55 @@
+a.facebook-form {
+  background-color: $facebook-blue;
+  display: block;
+  padding: 5px;
+  margin: 10px auto;
+}
+div {
+  &.toboggan-container {
+    text-align: center;
+  }
+  &.toboggan-login-link-container {
+    text-align: left;
+    a {
+      text-decoration: none;
+    }
+  }
+  &.toboggan-block-message {
+    text-align: left;
+  }
+  &.user-login-block {
+    text-align: left;
+    a {
+      text-align: left;
+    }
+  }
+}
+
+
+.toboggan-unified {
+  #login-message {
+    text-align: center;
+  }
+  #login-links {
+    text-align: center;
+    a {
+      padding: .5em;
+      border: 1px #666 solid;
+      background-color: #EEE;
+      &:hover {
+        background-color: #DDD;
+      }
+      &.lt-active {
+        background-color: #FFF19A;
+        border: 2px #333 solid;
+        &:hover {
+          background-color: #FFF19A;
+          border: 2px #333 solid;
+        }
+      }
+    }
+  }
+  &.login #register-form, &.register #login-form {
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+.block-inner {
+  .content {
+    article {margin-top: 20px;}
+    ul {list-style-type: none;}
+    ul li {margin: 0;}
+    ul li span a {
+      font-weight: 700;
+      @include font-size(15);
+    }
+  }
+}

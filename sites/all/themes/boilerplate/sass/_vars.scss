@@ -54,13 +54,21 @@ $monospace_font: "Dosis, Courier New", "DejaVu Sans Mono", monospace, sans-serif
 //
 // Colors
 //
-$link_color: none;
+$link_color: #3545E5;
+$link_secondary: #FFE88E;
 $visited_link_color: $link_color;
 $active_link_color: none;
 $main_text_color: #222;
 $header_text_color: #000;
 $selection_text_color: #fff;
 $selection_bg_color: #fe57a1;
+$facebook-blue: #337ab7;
+
+/*
+  Transitions time to secondary
+*/
+$secondary-sec: 0.7s;
+$secondary-ease: ease-in-out;
 
 //
 // Partials to be shared with all .scss files.

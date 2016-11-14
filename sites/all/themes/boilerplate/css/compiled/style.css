@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis|Open+Sans");
+/*
+  Transitions time to secondary
+*/
 #page {
   width: 60%;
   margin: 0 auto;
@@ -47,6 +50,9 @@ img.logo {
 
 body, #page {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans", helvetica, Arial, sans-serif;
 }
 
 @media only screen and (max-width: 60%) {
@@ -70,6 +76,41 @@ body, #page {
     padding: 0;
     border: 0;
   }
+}
+
+/*
+ * Default link
+ */
+a {
+  position: relative;
+  color: #3545E5;
+  text-decoration: none;
+  transition: color 0.7s ease-in-out;
+  backface-visibility: hidden;
+}
+
+a::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  height: 0.0em;
+  bottom: -0.08em;
+  left: -0.15em;
+  right: -0.15em;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #FFE88E;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: height 0.2s cubic-bezier(0.54, 0.08, 0, 1.18), background 0.7s ease-in-out;
+}
+.dark .secondary a::after {
+  background-color: #3545E5;
+}
+
+a:hover::after,
+a.active::after {
+  height: 0.5em;
 }
 
 #main {
@@ -881,14 +922,147 @@ tr.odd {
   background: #fff;
 }
 
+.login {
+  background: #f9f9f9;
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: -webkit-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: -o-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: -ms-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: linear-gradient(to bottom, #f8f8f8 0%, #f9f9f9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
+  -webkit-box-shadow: 0 1px 0 #fff inset;
+  -moz-box-shadow: 0 1px 0 #fff inset;
+  -ms-box-shadow: 0 1px 0 #fff inset;
+  -o-box-shadow: 0 1px 0 #fff inset;
+  box-shadow: 0 1px 0 #fff inset;
+  border: 1px solid #c4c6ca;
+  margin: 0 auto;
+  padding: 25px 0 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+}
+.login #login-message:before,
+.login #login-message:after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 10px;
+  width: 27%;
+}
+.login #login-message:after {
+  background: #7e7e7e;
+  background: -moz-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: -webkit-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: -o-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: -ms-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: linear-gradient(to right, #7e7e7e 0%, #ffffff 100%);
+  right: 0;
+}
+.login #login-message:before {
+  background: #7e7e7e;
+  background: -moz-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: -webkit-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: -o-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: -ms-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: linear-gradient(to left, #7e7e7e 0%, #ffffff 100%);
+  left: 0;
+}
 .login #login-links a {
   border-radius: 20px;
+  width: 40%;
 }
 .login .description {
   display: none;
 }
 .login .form-actions input {
   border-radius: 10px;
+}
+
+a.facebook-form {
+  background-color: #337ab7;
+  display: block;
+  padding: 5px;
+  margin: 10px auto;
+}
+
+div.toboggan-container {
+  text-align: center;
+}
+div.toboggan-login-link-container {
+  text-align: left;
+}
+div.toboggan-login-link-container a {
+  text-decoration: none;
+}
+div.toboggan-block-message {
+  text-align: left;
+}
+div.user-login-block {
+  text-align: left;
+}
+div.user-login-block a {
+  text-align: left;
+}
+
+.toboggan-unified #login-message {
+  text-align: center;
+}
+.toboggan-unified #login-links {
+  text-align: center;
+}
+.toboggan-unified #login-links a {
+  padding: .5em;
+  border: 1px #666 solid;
+  background-color: #EEE;
+}
+.toboggan-unified #login-links a:hover {
+  background-color: #DDD;
+}
+.toboggan-unified #login-links a.lt-active {
+  background-color: #FFF19A;
+  border: 2px #333 solid;
+}
+.toboggan-unified #login-links a.lt-active:hover {
+  background-color: #FFF19A;
+  border: 2px #333 solid;
+}
+.toboggan-unified.login #register-form, .toboggan-unified.register #login-form {
+  display: none;
+}
+
+#content .node-inner span.submitted {
+  padding: 20px 0;
+}
+#content .node-inner .content img {
+  margin-top: 20px;
+}
+#content .node-inner .content p {
+  margin-top: 20px;
+}
+
+#content #content-inner #content-header h1.title {
+  text-transform: uppercase;
+}
+#content #content-inner #content-header #content-area {
+  padding: 50px;
+}
+
+.block-inner .content article {
+  margin-top: 20px;
+}
+.block-inner .content ul {
+  list-style-type: none;
+}
+.block-inner .content ul li {
+  margin: 0;
+}
+.block-inner .content ul li span a {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22.5px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
 }
 
 @media print {
@@ -1505,4 +1679,8 @@ div[class^="col-"] {
 
 div[class^="col-auto"] {
   background: lightblue;
+}
+
+body {
+  -webkit-backface-visibility: hidden;
 }

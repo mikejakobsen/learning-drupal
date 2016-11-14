@@ -7,6 +7,7 @@
   <head>
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
     <?php print $styles; ?>
     <?php print $scripts; ?>
   </head>

@@ -55,6 +55,10 @@ img.logo {
 
 body, #page {
   height:100%; // Page height fills the screen and footer at the bottom.
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $main-font;
+
 }
 body {
   @include breakpoint($tablet) {
@@ -74,6 +78,38 @@ html, body {
     padding: 0;
     border: 0;
   }
+}
+
+/*
+ * Default link
+ */
+a {
+  position: relative;
+  color: $link-color;
+  text-decoration: none;
+  transition: color $secondary-sec $secondary-ease;
+  backface-visibility: hidden;
+}
+a::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  height: 0.0em;
+  bottom: -0.08em;
+  left: -0.15em;
+  right: -0.15em;
+  z-index: -1;
+  pointer-events: none;
+  background-color: $link_secondary;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: height 0.2s cubic-bezier(0.54, 0.08, 0, 1.18),
+              background $secondary-sec $secondary-ease;
+  .dark .secondary & { background-color: $link_color; }
+}
+a:hover::after,
+a.active::after {
+  height: 0.5em;
 }
 
 #main {

@@ -1279,12 +1279,12 @@ function theme_lt_unified_login_page($variables) {
   $output .= '<div class="toboggan-unified ' . $active_form . '">';
 
   // Create the initial message and links that people can click on.
-  $output .= '<div id="login-message">' . t('You are not logged in.') . '</div>';
   $output .= '<div id="login-links">';
-  $output .= l(t('I have an account'), 'user/login', array('attributes' => array('class' => array('login-link'), 'id' => 'login-link')));
+  $output .= l(t('Login'), 'user/login', array('attributes' => array('class' => array('login-link'), 'id' => 'login-link')));
   $output .= ' ';
-  $output .= l(t('I want to create an account'), 'user/register', array('attributes' => array('class' => array('login-link'), 'id' => 'register-link')));
+  $output .= l(t('Create User'), 'user/register', array('attributes' => array('class' => array('login-link'), 'id' => 'register-link')));
 
+  $output .= '<a class="facebook-form" href="simple-fb-connect"><span class="fa fa-facebook-official"></span> Login with Facebook</a>';
   $output .= '</div>';
 
   // Add the login and registration forms in.
