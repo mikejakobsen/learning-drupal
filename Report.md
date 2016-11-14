@@ -1,4 +1,4 @@
-# Report
+e Report
 
 Mike Jakobsen
 http://www.mikejakobsen.com/drupal
@@ -35,4 +35,10 @@ For at integrere Facebook benyttes [Facebook SDK v. 4.0.23.](https://github.com/
 
 Modulet sammenligner dernæst e-mailen anvendt til Facebook profilen. Hvis Drupal applikationen allerede har en bruger med den pågældende email, bliver denne bruger dernæst logget ind. Ellers bliver en ny bruger tilføjet. Dernæst bliver brugeren billede gemt i *sites/default/files/pictures*. Modsat de fleste andre Facebook Login løsninger der ofte undlader at gemme profil billede, men derimod blot tilgår billederne via deres URL, der så bliver gemt i databasen.
 
+### Coffee
 
+For at gøre Drupal applikationen nemmere at navigere. Benytter jeg indvidere Coffe modulet, for at gøre applikationen mere overskuelig.
+
+![Coffee Gif](assets/coffee.gif)
+
+Alt+d åbner dermed
