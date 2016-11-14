@@ -1,4 +1,4 @@
-p Report
+# Report
 
 Mike Jakobsen
 http://www.mikejakobsen.com/drupal
@@ -16,6 +16,7 @@ Login
 * Drupal vs andre CMS systemer
 * Extra module
  * Facebook
+* Theme
 
 ## Drupal
 
@@ -37,15 +38,28 @@ Modulet sammenligner dernæst e-mailen anvendt til Facebook profilen. Hvis Drupa
 
 ### Coffee
 
+![Coffee Gif](assets/coffee.gif)
+G
 For at gøre Drupal applikationen nemmere at navigere. Benytter jeg indvidere Coffee modulet. Coffee modulet gør det muligt at navigere Drupals backend via tastaturet. Udvikleren Michael Moi lavede Coffee med inspiration fra Alfred til OSX, der gør det muligt at navigere computeren, via tastaturet. [Kilde](https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-coffee/12/04/2016/10291)
 Coffee skaber en lignende funktion ved at aktivere Coffee via *Alt+d*. For dernæst at skrive hvilken  funktionalitet,  eller kvillket sted i applikationen man ønsker at tilgå.
 
-![Coffee Gif](assets/coffee.gif)
+![Coffee Gif](assets/match-review.gif)
 
+Oprindeligt søgte jeg en lignende interface, ved at tilgå URL'en der angiver den tilsvarende funktion. At tilgå */node/add/match-review*, vil dermed være det samme at.
 
-    Content -> Add Content -> Blog
+    Content - Add Content - Match Review
 
-    /node/add/blog
+![Url](assets/url.png)
 
+## Theme
 
+For at bryde med det generiske udseende som pryder Bartik temaet. Benytter jeg en [boilerplate](https://www.drupal.org/project/boilerplate) til et theme. En boilerplate skal i denne sammenhæng forståes som et meget minimalistisk tema. Der dermed er nemmere at modificere.
+
+[Theme Dir](https://github.com/mikejakobsen/learning-drupal/tree/master/sites/all/themes/boilerplate)
+
+    block.tpl.php
+    comment.tpl.php
+    html.tpl.php
+    node.tpl.php
+    page.tpl.php
 
