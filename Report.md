@@ -20,6 +20,7 @@ Login
 ## Summary
 * Drupal
 * Drupal vs andre CMS systemer
+* Drush
 * Extra module
  * Facebook
 * Theme
@@ -27,6 +28,24 @@ Login
 ## Drupal
 
 ## Drupal vs andre CMS systemer
+
+## Drush
+
+Drush er en command-line interface, der gør det muligt at interagere med Drupal installationen. Hvor i mod Drupals egen command-line tool primært er til at install samt scaffolde din Drupal applikation.
+
+Drush installeres via PHP dependency manager [Composer](https://getcomposer.org/). Drush gør det for eksempel muligt at download samt aktivere Drupal moduler direkte fra command-line.
+
+### Opret ny bruger
+
+```bash
+drush user-create Mike --mail="mike@jakobsen.dk" --password="secret"
+```
+### Clear Cache
+
+![Drush Clear Cache](assets/clear-cache.gif)
+
+### Lav et SQL-dump
+![Drush SQL-dump](assets/sql-dump.gif)
 
 ## Extra moduler
 
