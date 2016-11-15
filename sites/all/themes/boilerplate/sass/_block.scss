@@ -12,13 +12,13 @@
 
 article {
   .node-inner {
-    color: green;
     header {
       h2 {text-transform: uppercase;}
-      span.submitted {color: blue;}
+      span.submitted {}
     }
     footer {
-      .links {color: green}
+      padding-top: 20px;
+      .links {color: $main_text_color;}
     }
   }
 }

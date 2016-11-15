@@ -4,7 +4,7 @@
     }
     span.submitted {padding: 20px 0;}
     .content {
-      img {margin-top: 20px;}
+      img {margin: 20px auto;}
       p {
         margin-top: 20px;
         @include font-size(15px)
