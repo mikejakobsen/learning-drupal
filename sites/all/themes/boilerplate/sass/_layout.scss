@@ -21,68 +21,68 @@
   width: $page_width;
   margin: 0 auto;
   // @media screen and (max-width : $tablet) {
-  @include breakpoint($tablet) {
+    @include breakpoint($tablet) {
+      width: 100%;
+    }
+    @include breakpoint($mobile) {
+      width: 100%;
+      margin: 0px 0px 0px 0px;
+    }
+  }
+  .node-inner { // Remove 'auto' and the width to switch to a fluid width.
     width: 100%;
-  }
-  @include breakpoint($mobile) {
-    width: 100%;
-    margin: 0px 0px 0px 0px;
-  }
-}
-.node-inner { // Remove 'auto' and the width to switch to a fluid width.
-  width: 100%;
-  margin: 0 auto;
-  // @media screen and (max-width : $tablet) {
-  @include breakpoint($tablet) {
-    width: 100%;
-  }
-  @include breakpoint($mobile) {
-    width: 100%;
-    margin: 0px 0px 0px 0px;
-  }
-}
+    margin: 0 auto;
+    // @media screen and (max-width : $tablet) {
+      @include breakpoint($tablet) {
+        width: 100%;
+      }
+      @include breakpoint($mobile) {
+        width: 100%;
+        margin: 0px 0px 0px 0px;
+      }
+    }
 
-h1.title {
-  font-family: $main_font;
-  @include font-size(25);
-  text-align: center;
-}
+    h1.title {
+      font-family: $main_font;
+      @include font-size(25);
+      text-align: center;
+    }
 
-img.logo {
-  margin: 0 auto;
-  max-height: 80px;
-}
+    img.logo {
+      margin: 0 auto;
+      max-height: 80px;
+    }
 
-body, #page {
-  height:100%; // Page height fills the screen and footer at the bottom.
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: $main-font;
+    body, #page {
+      height:100%; // Page height fills the screen and footer at the bottom.
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: $main-font;
 
-}
-body {
-  @include breakpoint($tablet) {
-    background: #fff;
-    word-wrap: break-word;
-    -webkit-text-size-adjust: none;
-  }
-}
-html, body {
-  @include breakpoint($tablet) {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  @include breakpoint($mobile) {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-}
+    }
+    body {
+      @include breakpoint($tablet) {
+        background: #fff;
+        word-wrap: break-word;
+        -webkit-text-size-adjust: none;
+      }
+    }
+    html, body {
+      @include breakpoint($tablet) {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      @include breakpoint($mobile) {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+    }
 
-/*
- * Default link
- */
+    /*
+     * Default link
+     */
 a {
   position: relative;
   color: $link-color;
@@ -104,7 +104,7 @@ a::after {
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: height 0.2s cubic-bezier(0.54, 0.08, 0, 1.18),
-              background $secondary-sec $secondary-ease;
+  background $secondary-sec $secondary-ease;
   .dark .secondary & { background-color: $link_color; }
 }
 a:hover::after,
@@ -183,6 +183,18 @@ a.active::after {
 .breadcrumb,
 .node {
   clear: both;
+}
+#header {
+  #header-logo{
+    width: $logo-width;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  #name-and-slogan {
+    width: $site-title-width;
+    display: inline-block;
+    margin: 0 auto;
+  }
 }
 
 //

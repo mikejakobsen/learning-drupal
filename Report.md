@@ -77,6 +77,9 @@ For at bryde med det generiske udseende som pryder Bartik temaet. Benytter jeg e
 
 [Theme Dir](https://github.com/mikejakobsen/learning-drupal/tree/master/sites/all/themes/boilerplate)
 
+Drupal er baseret på en række layout filer. Disse template filer, kan overskrives via *tpl.php* filer i templates mappen.
+[html.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/html.tpl.php) definerer det overordnede layout.
+
     block.tpl.php
     comment.tpl.php
     html.tpl.php

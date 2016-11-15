@@ -1,14 +1,13 @@
 <div class="container" id="page" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <!-- ______________________ HEADER _______________________ -->
-  <header class="row" id="header">
-    <div class="col-xs-4">
+  <header id="header">
     <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img class="logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
-      </a>
+      <div id="header-logo">
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+          <img class="logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
+        </a>
+      </div>
     <?php endif; ?>
-    </div>
-    <div class="col-xs-8">
     <?php if ($site_name || $site_slogan): ?>
       <div id="name-and-slogan">
         <?php if ($site_name): ?>
@@ -25,20 +24,16 @@
         <?php if ($site_slogan): ?>
           <div id="site-slogan"><?php print $site_slogan; ?></div>
         <?php endif; ?>
-      </div>
     <?php endif; ?>
     <?php if ($page['header']): ?>
       <div id="header-region">
         <?php print render($page['header']); ?>
       </div>
     <?php endif; ?>
-  </div>
   </header> <!-- /header -->
 
 <!-- ______________________ Nav _______________________ -->
    <?php if ($main_menu || $secondary_menu || $page['navbar']): ?>
-    <div class="row">
-      <div class="col-xs-12">
         <nav id="navigation" class="menu <?php !empty($main_menu) ? print "with-primary" : ''; !empty($secondary_menu) ? print " with-secondary" : ''; ?>">
           <?php print theme('links', array('links' => $main_menu, 'attributes' => array('id' => 'primary', 'class' => array('links', 'clearfix', 'main-menu')))); ?>
           <?php print theme('links', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary', 'class' => array('links', 'clearfix', 'sub-menu')))); ?>
@@ -48,8 +43,6 @@
             </div>
           <?php endif; ?>
         </nav>
-      </div>
-    </div>
     <?php endif; ?>
 
 <!-- ______________________ Content _______________________ -->
@@ -89,7 +82,7 @@
     </div> <!-- /content-inner /content -->
 
     <?php if ($page['sidebar_first']): ?>
-      <aside class="col-xs-12 col-md-3" id="sidebar-first" class="column sidebar first">
+      <aside id="sidebar-first" class="column sidebar first">
         <div id="sidebar-first-inner" class="inner">
           <?php print render($page['sidebar_first']); ?>
         </div>
@@ -97,7 +90,7 @@
     <?php endif; ?> <!-- /sidebar-first -->
 
     <?php if ($page['sidebar_second']): ?>
-      <aside class="col-xs-12 col-lg-3" id="sidebar-second" class="column sidebar second">
+      <aside id="sidebar-second" class="column sidebar second">
         <div id="sidebar-second-inner" class="inner">
           <?php print render($page['sidebar_second']); ?>
         </div>
@@ -107,7 +100,7 @@
   <!-- ______________________ FOOTER _______________________ -->
     <?php if ($page['footer']): ?>
       <div class="row">
-        <footer class="col-xs-12" id="footer">
+        <footer id="footer">
           <?php print render($page['footer']); ?>
         </footer> <!-- /footer -->
       </div>
