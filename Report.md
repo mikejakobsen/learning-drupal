@@ -29,7 +29,7 @@ URL: http://www.mikejakobsen.com/drupal
 
 [Drush](https://drushcommands.com/drush-7x/) er en command-line interface, der gør det muligt at interagere med Drupal installationen. Hvor i mod Drupals egen command-line tool primært er til at install samt scaffolde din Drupal applikation.
 
-Drush installeres via PHP dependency manageren [Composer](https://getcomposer.org/). Drush gør det for eksempel muligt at download samt aktivere Drupal moduler direkte fra command-line.
+[Drush](https://packagist.org/packages/drush/drush) installeres via PHP dependency manageren [Composer](https://getcomposer.org/). Drush gør det for eksempel muligt at download samt aktivere Drupal moduler direkte fra command-line.
 
 ```bash
 drush dl modulename
@@ -46,7 +46,7 @@ drush user-create Mike --mail="mike@jakobsen.dk" --password="secret"
 
 ![Drush Clear Cache](assets/cache.gif)
 
-### Lav et SQL-dump
+### Backup af databasen
 ![Drush SQL-dump](assets/sql-dump.gif)
 
 ## Extra moduler
@@ -91,6 +91,14 @@ Oprindeligt søgte jeg en lignende interface, ved at tilgå URL'en der angiver d
     Content - Add Content - Match Review
 
 ![Url](assets/url.png)
+
+### NoCache
+
+Cacheing er en stor del af et CMS som Drupal, for at applikationen kan interagere samt loades hurtigere af brugeren. I forbindlese  med udviklingen af siden, har en konstante cacheing dog en række ulemper. Da udvikleren kan blive præsenteret for gammel cached indhold.
+
+[NoCache](https://www.drupal.org/project/nocache) er et module, der gør det muligt at deaktivere den konstante cacheing af indholdet, under udvikling. NoCache aktiveres via Drush.
+
+![Url](assets/no-cache.png)
 
 ## Theme
 

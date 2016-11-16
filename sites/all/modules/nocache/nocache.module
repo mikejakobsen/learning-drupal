@@ -1,0 +1,123 @@
+<?php
+
+/**
+ * @file
+ * The file contains NoCache module code.
+ */
+
+/**
+ * Implements hook_variable_group_info().
+ */
+function nocache_variable_group_info() {
+  $groups['nocache'] = array(
+    'title' => t('NoCache'),
+    'description' => t('NoCache configs.'),
+    'access' => 'administer site configuration',
+  );
+
+  return $groups;
+}
+
+/**
+ * Implements hook_variable_info().
+ */
+function nocache_variable_info($options) {
+  $variables = array();
+
+  if (module_exists('system')) {
+    $variables['nocache_system_block_cache'] = array(
+      'type' => 'boolean',
+      'title' => t('Disable block caching', array(), $options),
+      'default' => TRUE,
+      'group' => 'nocache',
+    );
+
+    $variables['nocache_system_cache'] = array(
+      'type' => 'boolean',
+      'title' => t('Disable page caching for anonymous users', array(), $options),
+      'default' => TRUE,
+      'group' => 'nocache',
+    );
+
+    $variables['nocache_system_preprocess_css'] = array(
+      'type' => 'boolean',
+      'title' => t('Disable CSS aggregation', array(), $options),
+      'default' => TRUE,
+      'group' => 'nocache',
+    );
+
+    $variables['nocache_system_preprocess_js'] = array(
+      'type' => 'boolean',
+      'title' => t('Disable JS aggregation', array(), $options),
+      'default' => TRUE,
+      'group' => 'nocache',
+    );
+  }
+  if (module_exists('cdn')) {
+    $variables['nocache_cdn_' . CDN_BASIC_MAPPING_VARIABLE] = array(
+      'type' => 'boolean',
+      'title' => t('Remove CDN mapping for CSS/JS', array(), $options),
+      'default' => TRUE,
+      'group' => 'nocache',
+    );
+  }
+
+  return $variables;
+}
+
+/**
+ *
+ * @param $message
+ */
+function nocache_message($message) {
+  if ('cli' == php_sapi_name()) {
+    if (function_exists('drush_print')) {
+      drush_print($message);
+    }
+  }
+  else {
+    drupal_set_message($message);
+  }
+}
+
+/**
+ * Implements hook_nocache().
+ */
+function system_nocache() {
+  if (variable_get('nocache_system_block_cache', TRUE)) {
+    variable_set('block_cache', 0);
+    nocache_message(t('Block caching was disabled.'));
+  }
+  if (variable_get('nocache_system_cache', TRUE)) {
+    variable_set('cache', 0);
+    nocache_message(t('Page caching for anonymous users was disabled.'));
+  }
+  if (variable_get('nocache_system_preprocess_css', TRUE)) {
+    variable_set('preprocess_css', 0);
+    nocache_message(t('CSS aggregation was disabled.'));
+  }
+  if (variable_get('nocache_system_preprocess_js', TRUE)) {
+    variable_set('preprocess_js', 0);
+    nocache_message(t('JS aggregation was disabled.'));
+  }
+}
+
+/**
+ * Implements hook_nocache().
+ */
+function cdn_nocache() {
+  if (variable_get('nocache_cdn_' . CDN_BASIC_MAPPING_VARIABLE, TRUE)) {
+    module_load_include('inc', 'cdn', 'cdn.basic');
+    $mapping = _cdn_basic_parse_raw_mapping(cdn_basic_get_mapping());
+    unset($mapping['js']);
+    unset($mapping['css']);
+    $content = array();
+    foreach ($mapping as $extension => $domains) {
+      $domains = array_unique($domains);
+      $content[] = implode(' ', $domains) . '|.' . $extension;
+    }
+    variable_set(CDN_BASIC_MAPPING_VARIABLE, implode(PHP_EOL, $content));
+    nocache_message('CDN mapping for CSS and JS were disabled!');
+  }
+}
+
