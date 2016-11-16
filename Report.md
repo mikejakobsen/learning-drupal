@@ -98,7 +98,7 @@ Cacheing er en stor del af et CMS som Drupal, for at applikationen kan interager
 
 [NoCache](https://www.drupal.org/project/nocache) er et module, der gør det muligt at deaktivere den konstante cacheing af indholdet, under udvikling. NoCache aktiveres via Drush.
 
-![Url](assets/no-cache.png)
+![Url](assets/nocache.png)
 
 ## Theme
 
