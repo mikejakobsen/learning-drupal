@@ -32,11 +32,12 @@ features[] = secondary_menu
 scripts[] = js/libs/modernizr-2.6.2-respond-1.1.0.min.js
 scripts[] = js/script.js
 scripts[] = js/plugins.js
+scripts[] = js/contactform.js
 
 plugins[panels][layouts] = layouts
 
 stylesheets[all][] = css/compiled/style.css
-stylesheets[all][] = https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation-flex.css
+stylesheets[all][] = https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css
 
 stylesheets-conditional[lte IE 8][all][]  = css/compiled/ie8.css
 stylesheets-conditional[lte IE 7][all][]  = css/compiled/ie7.css

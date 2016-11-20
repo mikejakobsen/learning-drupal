@@ -7,17 +7,33 @@
 //
 // Links
 //
-a,a:visited,a:hover,a:active{
-  -webkit-backface-visibility:hidden;
-          backface-visibility:hidden;
-	position:relative;
-  transition:0.5s color ease;
-	text-decoration:none;
+a {
+  position: relative;
+  color: $link_color;
+  text-decoration: none;
+  transition: color 0.7s ease-in-out;
+  backface-visibility: hidden;
 }
-a:hover{
-	color:#d73444;
+a::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  height: 0.0em;
+  bottom: -0.08em;
+  left: -0.15em;
+  right: -0.15em;
+  z-index: -1;
+  pointer-events: none;
+  background-color: $link_color;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: height 0.2s cubic-bezier(0.54, 0.08, 0, 1.18),
+  background 0.7s ease-in-out;
 }
-
+a:hover::after,
+a.active::after {
+  height: 0.5em;
+}
 #navigation {
   ul {
     margin: 0px;

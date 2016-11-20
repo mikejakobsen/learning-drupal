@@ -107,11 +107,23 @@ For at bryde med det generiske udseende som pryder Bartik temaet. Benytter jeg e
 [Theme Dir](https://github.com/mikejakobsen/learning-drupal/tree/master/sites/all/themes/boilerplate)
 
 Drupal er baseret på en række layout filer. Disse template filer, kan overskrives via *tpl.php* filer i templates mappen.
-[html.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/html.tpl.php) definerer det overordnede layout.
+[html.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/html.tpl.php) definerer det overordnede layout, og dermed den overordnede HTML template.
 
-    block.tpl.php
-    comment.tpl.php
-    html.tpl.php
-    node.tpl.php
-    page.tpl.php
+```php
+  <head>
+    <?php print $head; ?>
+    <title><?php print $head_title; ?></title>
+    <?php print $styles; ?>
+    <?php print $scripts; ?>
+  </head>
+```
 
+[block.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/block.tpl.php)
+[comment.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/comment.tpl.php)
+[html.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/html.tpl.php)
+[node.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/node.tpl.php)
+[page.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/page.tpl.php)
+
+## User Profile
+[user-picture.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/user-picture.tpl.pho)
+[user-profile-tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/user-profile.tpl.php)
