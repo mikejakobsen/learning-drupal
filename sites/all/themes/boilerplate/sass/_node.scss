@@ -2,7 +2,11 @@
   .node-inner {
     h2 {
     }
-    span.submitted {padding: 20px 0;}
+    .date-item {
+      span.date-item-month {}
+      span.date-item-day {}
+      span.date-item-year {}
+    }
     .content {
       img {margin: 20px auto;}
       p {

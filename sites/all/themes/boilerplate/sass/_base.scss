@@ -47,6 +47,47 @@ a.active::after {
   }
 }
 
+.mobileselect {
+  margin: 0 auto;
+  display: block;
+  color: white;
+  @include font-size(13);
+  text-align: center;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+  position: relative;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: .25em;
+  &::after {
+    content: 'Pil';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    pointer-events: none;
+  }
+  &:hover::after {
+    color: white;
+  }
+  &::after {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+}
+
 #footer {
   p {
     margin:0px;

@@ -56,6 +56,7 @@ function boilerplate_preprocess_page(&$vars, $hook) {
     $vars['title'] = $vars['node_title'];
   }
   // Adding a class to #page in wireframe mode
+  // To show outline on elements
   if (theme_get_setting('wireframe_mode')) {
     $vars['classes_array'][] = 'wireframe-mode';
   }
@@ -66,16 +67,49 @@ function boilerplate_preprocess_page(&$vars, $hook) {
   if (!empty($vars['secondary_menu'])) {
     $vars['classes_array'][] = 'with-subnav';
   }
+
+  if (isset($vars['node'])) {
+
+    // Ref suggestions
+    $suggests = &$vars['theme_hook_suggestions'];
+
+    // Get path arguments.
+    $args = arg();
+    // Remove first argument of "node".
+    unset($args[0]);
+
+    // Set type.
+    $type = "page__type_{$vars['node']->type}";
+
+    // Bring it all together.
+    $suggests = array_merge(
+      $suggests,
+      array($type),
+      theme_get_suggestions($args, $type)
+    );
+  }
 }
 
 function boilerplate_preprocess_node(&$vars) {
   // Add a striping class.
   $vars['classes_array'][] = 'node-' . $vars['zebra'];
+
+  // Only work with articles
+  if ($vars['type'] == 'article' or 'interview') {
+    $node = $vars['node'];
+    /* kpr($node); */
+
+    $vars['submitted_day'] = format_date($node->created, 'custom', 'j');
+    $vars['submitted_month'] = format_date($node->created, 'custom', 'M');
+    $vars['submitted_year'] = format_date($node->created, 'custom', 'Y');
+  }
 }
 
 function boilerplate_preprocess_block(&$vars, $hook) {
   // Add a striping class.
   $vars['classes_array'][] = 'block-' . $vars['zebra'];
+  /* kpr($vars); */
+
 }
 
 /**

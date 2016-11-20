@@ -1,5 +1,5 @@
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>">
-  <div class="node-inner">
+<article id="interview-<?php print $node->nid; ?>" class="<?php print $classes; ?>">
+  <div class="interview-inner">
     <header>
         <?php if (!$page): ?>
       <h2 class=""<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -7,13 +7,6 @@
 
       <?php print $user_picture; ?>
 
-      <?php if ($display_submitted): ?>
-        <div class="date-item">
-          <span class="date-item-month"><?php print $submitted_month; ?></span>
-          <span class="date-item-day"><?php print $submitted_day; ?></span>
-          <span class="date-item-year"><?php print $submitted_year; ?></span>
-        </div>
-      <?php endif; ?>
     </header>
     <div class="content">
 <?php
@@ -34,7 +27,7 @@ print render($content);
       <?php endif; ?>
       </footer>
     <?php endif; ?>
-  </div> <!-- /node-inner -->
-</article> <!-- /node-->
+  </div> <!-- /interview-inner -->
+</article> <!-- /interview-->
 
 <?php print render($content['comments']); ?>
