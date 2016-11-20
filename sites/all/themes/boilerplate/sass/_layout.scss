@@ -145,7 +145,7 @@ a.active::after {
 }
 
 #footer {
-  height: $footer_height;
+  @include sticky-footer($footer_height);
   width: $page_width;
   @include breakpoint($tablet) {
     position: relative;
@@ -161,7 +161,7 @@ a.active::after {
   @include breakpoint($mobile) {
     float: none;
     clear: both;
-    width: auto;
+    width: 100%;
     margin: 0px;
   }
   @include breakpoint($tablet) {

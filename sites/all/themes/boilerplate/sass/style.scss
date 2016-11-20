@@ -5,10 +5,11 @@
 // all pages.
 ////////////////////////////////////////////////////////////////////////////////
 
-@import url('https://fonts.googleapis.com/css?family=Dosis|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Open+Sans:300i,400,700|Oswald:400,700');
 
 @import "vars"; // Imports default variables and mixins.
 @import "bemify"; // Bemify mixins
+@import "animate"; // Animations Mixins
 @import "layout";   // Defines positioning of major page elements.
 @import "base";     // Establishes general color and typography rules and browser resets.
 @import "document"; // Default content styles.
@@ -20,7 +21,5 @@
 @import "block";   // Defines Blocks
 @import "profile";   // User profile
 @import "contact-form";   // ContactForm
-//@import "mobile";   // We can now define our mobile styles inline
+@import "comments";   // ContactForm
 @import "print";    // Defines styles for printing.
-@import "grid";
-@import "animate";

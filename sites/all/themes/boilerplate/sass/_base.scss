@@ -13,6 +13,7 @@ a {
   text-decoration: none;
   transition: color 0.7s ease-in-out;
   backface-visibility: hidden;
+  @include single-text-shadow;
 }
 a::after {
   position: absolute;
@@ -52,6 +53,7 @@ a.active::after {
   display: block;
   color: white;
   @include font-size(13);
+  @include border-radius(5px);
   text-align: center;
   position: relative;
   -webkit-appearance: none;
@@ -68,7 +70,6 @@ a.active::after {
   height: 3em;
   line-height: 3;
   overflow: hidden;
-  border-radius: .25em;
   &::after {
     content: 'Pil';
     position: absolute;
@@ -89,6 +90,7 @@ a.active::after {
 }
 
 #footer {
+  @include sticky-footer(80px);
   p {
     margin:0px;
   }
@@ -101,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3em;
   color: $header_text_color;
   @include breakpoint($mobile) {
-    font-family: $main-font;
+    font-family: $headline;
     line-height: 1.5;
     @include font-size(16);
     color: #000;
@@ -146,6 +148,12 @@ h6 {
 
 p {
   margin: 0 0 1em 0;
+  @include adjust-font-size-to(16px);
+  @include leader(0);
+  @include trailer(1);
+  a {
+    @include hover-link;
+  }
 }
 
 abbr {

@@ -1,10 +1,5 @@
 <?php
 
-/*
- * Here we override the default HTML output of drupal.
- * refer to http://drupal.org/node/550722
- */
-
 // Auto-rebuild the theme registry during theme development.
 if (theme_get_setting('clear_registry')) {
   // Rebuild .info data.
@@ -106,10 +101,20 @@ function boilerplate_preprocess_node(&$vars) {
   }
 }
 
+function boilerplate_preprocess_user_profile(&$vars) {
+  $account = $vars['elements']['#account'];
+
+  // Helpful $user_profile variable for templates.
+  foreach (element_children($vars['elements']) as $key) {
+    $vars['user_profile'][$key] = $vars['elements'][$key];
+  }
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $vars['elements'], $vars);
+}
+
 function boilerplate_preprocess_block(&$vars, $hook) {
   // Add a striping class.
   $vars['classes_array'][] = 'block-' . $vars['zebra'];
-  kpr($vars);
 }
 
 function boilerplate_preprocess_interview(&$vars, $hook) {

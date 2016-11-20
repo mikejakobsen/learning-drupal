@@ -11,7 +11,9 @@
       img {margin: 20px auto;}
       p {
         margin-top: 20px;
-        @include font-size(15px)
+        @include adjust-font-size-to(18px);
+        @include leader(0);
+        @include trailer(1);
       }
     }
     .user-image {

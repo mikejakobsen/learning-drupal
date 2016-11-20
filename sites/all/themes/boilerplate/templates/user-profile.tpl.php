@@ -1,5 +1,4 @@
 <div class="profile-info">
-  <?php
-  print_r($user_profile);
-  ?>
+  <h1>Hej</h1>
 </div>
+

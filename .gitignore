@@ -44,3 +44,6 @@ sites/all/themes/boilerplate/tags
 
 # Vim Temp files
 *.swo
+
+#Upload Scripts
+migrate-scripts.zsh

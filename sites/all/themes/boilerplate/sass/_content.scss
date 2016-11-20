@@ -1,5 +1,6 @@
 #content {
   #content-inner {
+    @include fadeIn();
     #content-header {
       h1.title {
         text-transform: uppercase;
@@ -7,6 +8,11 @@
       h2 {text-align: center;}
       #content-area {
         padding: 50px;
+      }
+      p {
+        @include adjust-font-size-to(18px);
+        @include leader(0);
+        @include trailer(1);
       }
     }
   }

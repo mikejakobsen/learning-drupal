@@ -1,8 +1,8 @@
-name = Boilerplate
-description = Metaltoad HTML5/SASS base theme for Drupal 7
+name = AwesomeTheme
+description = Awesome Theme
 screenshot = images/screenshot.png
 core = 7.x
-version = 1.x-dev
+version = 0.0.1
 project = Boilerplate
 engine = phptemplate
 
@@ -32,7 +32,6 @@ features[] = secondary_menu
 scripts[] = js/libs/modernizr-2.6.2-respond-1.1.0.min.js
 scripts[] = js/script.js
 scripts[] = js/plugins.js
-scripts[] = js/contactform.js
 
 plugins[panels][layouts] = layouts
 
@@ -47,10 +46,3 @@ settings[basic_tabs] = 1
 settings[basic_breadcrumb_separator] = »
 settings[wireframe_mode] = 0
 settings[clear_registry] = 0
-
-; Information added by Drupal.org packaging script on 2014-06-06
-version = "7.x-1.10"
-core = "7.x"
-project = "boilerplate"
-datestamp = "1402073928"
-
