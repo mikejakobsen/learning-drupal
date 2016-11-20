@@ -97,7 +97,8 @@ function boilerplate_preprocess_node(&$vars) {
   // Only work with articles
   if ($vars['type'] == 'article' or 'interview') {
     $node = $vars['node'];
-    /* kpr($node); */
+
+    $vars['name'];
 
     $vars['submitted_day'] = format_date($node->created, 'custom', 'j');
     $vars['submitted_month'] = format_date($node->created, 'custom', 'M');
@@ -108,7 +109,12 @@ function boilerplate_preprocess_node(&$vars) {
 function boilerplate_preprocess_block(&$vars, $hook) {
   // Add a striping class.
   $vars['classes_array'][] = 'block-' . $vars['zebra'];
-  /* kpr($vars); */
+  kpr($vars);
+}
+
+function boilerplate_preprocess_interview(&$vars, $hook) {
+  // Add a striping class.
+  $vars['classes_array'][] = 'block-' . $vars['zebra'];
 
 }
 

@@ -5,7 +5,17 @@
       <h2 class=""<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php endif; ?>
 
-      <?php print $user_picture; ?>
+      <?php if ($user_picture): ?>
+        <div class="user-image">
+          <?php print $user_picture; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($name): ?>
+        <div class="user-name">
+          <?php print $name; ?>
+        </div>
+      <?php endif; ?>
 
       <?php if ($display_submitted): ?>
         <div class="date-item">

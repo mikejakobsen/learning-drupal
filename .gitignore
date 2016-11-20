@@ -41,3 +41,6 @@ sites/all/themes/boilerplate/css
 # Ignore Theme Tags genereated by Ctags
 
 sites/all/themes/boilerplate/tags
+
+# Vim Temp files
+*.swo

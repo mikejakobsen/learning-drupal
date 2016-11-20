@@ -127,3 +127,17 @@ Drupal er baseret på en række layout filer. Disse template filer, kan overskri
 ## User Profile
 [user-picture.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/user-picture.tpl.pho)
 [user-profile-tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/user-profile.tpl.php)
+
+### KPR
+
+```php
+	function boilerplate_preprocess_node(&$vars) {
+	// For at printe alle værdier i $vars
+	kpr($vars);
+	}
+```
+
+[format_date](https://api.drupal.org/api/drupal/includes!common.inc/function/format_date/7.x) function
+```
+format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL)
+``

@@ -7,6 +7,17 @@
       font-weight: 700;
       @include font-size(15);
     }
+    .group-left {
+      img {max-width: 100%}
+    }
+    .group-right {
+      .field-type-image .field-items {
+        img {
+          max-width: 100%;
+          max-height: 200px;
+        }
+      }
+    }
   }
 }
 
