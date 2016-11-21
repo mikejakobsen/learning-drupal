@@ -1,4 +1,3 @@
-/* Author: Dan Linn */
 (function($) {
   $(window).resize(function(){
     if(!$(".mobileselect").length) {
@@ -25,7 +24,7 @@
     attach: function (context) {
       createMobileMenu();
     }
-  }
+  };
   $.support.placeholder = (function(){
     var i = document.createElement('input');
     return 'placeholder' in i;
@@ -44,22 +43,22 @@
       var $this = $(this),
         $parent = $this.parent().find("label");
 
-      if (e.type == 'keyup') {
-        if( $this.val() == '' ) {
+      if (e.type === 'keyup') {
+        if( $this.val() === '' ) {
           $parent.addClass('js-hide-label');
         } else {
           $parent.removeClass('js-hide-label');
         }
       }
-      else if (e.type == 'blur') {
-        if( $this.val() == '' ) {
+      else if (e.type === 'blur') {
+        if( $this.val() === '' ) {
           $parent.addClass('js-hide-label');
         }
         else {
           $parent.removeClass('js-hide-label').addClass('js-unhighlight-label');
         }
       }
-      else if (e.type == 'focus') {
+      else if (e.type === 'focus') {
         if( $this.val() !== '' ) {
           $parent.removeClass('js-unhighlight-label');
         }

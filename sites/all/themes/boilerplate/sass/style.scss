@@ -14,6 +14,7 @@
 @import "base";     // Establishes general color and typography rules and browser resets.
 @import "document"; // Default content styles.
 @import "modules";   // Defines module styles.
+@import "frontpage";   // The Drupal index page
 @import "login";   // Defines Login
 @import "form";   // Defines Form
 @import "node";   // Defines Node

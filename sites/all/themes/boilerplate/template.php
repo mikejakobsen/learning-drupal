@@ -11,6 +11,16 @@ if (theme_get_setting('clear_registry')) {
 if (theme_get_setting('boilerplate_tabs')) {
   drupal_add_css( drupal_get_path('theme', 'boilerplate') . '/css/tabs.css');
 }
+// Some features are not always available
+$disabled = array();
+if (!variable_get('user_pictures', 0)) {
+  $disabled['toggle_node_user_picture'] = TRUE;
+  $disabled['toggle_comment_user_picture'] = TRUE;
+}
+if (!module_exists('comment')) {
+  $disabled['toggle_comment_user_picture'] = TRUE;
+  $disabled['toggle_comment_user_verification'] = TRUE;
+}
 
 /**
  * Preprocesses the wrapping HTML.
@@ -49,11 +59,6 @@ function boilerplate_preprocess_html(&$vars) {
 function boilerplate_preprocess_page(&$vars, $hook) {
   if (isset($vars['node_title'])) {
     $vars['title'] = $vars['node_title'];
-  }
-  // Adding a class to #page in wireframe mode
-  // To show outline on elements
-  if (theme_get_setting('wireframe_mode')) {
-    $vars['classes_array'][] = 'wireframe-mode';
   }
   // Adding classes wether #navigation is here or not
   if (!empty($vars['main_menu']) or !empty($vars['sub_menu'])) {
@@ -103,6 +108,8 @@ function boilerplate_preprocess_node(&$vars) {
 
 function boilerplate_preprocess_user_profile(&$vars) {
   $account = $vars['elements']['#account'];
+
+  kpr($vars);
 
   // Helpful $user_profile variable for templates.
   foreach (element_children($vars['elements']) as $key) {
