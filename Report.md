@@ -128,8 +128,34 @@ Drupal er baseret på en række layout filer. Disse template filer, kan overskri
 [user-picture.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/user-picture.tpl.pho)
 [user-profile-tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/user-profile.tpl.php)
 
+### Overriding Theme templates
+
+For at overføre enkelte variabler til enkelte content-types. Her videreføres fx. variablerne tilknyttet *nodes templates.*
+
+```php
+	function boilerplate_preprocess_node(&$vars) {
+		// Only work with articles
+		if ($vars['type'] == 'article' or 'interview') {
+			$node = $vars['node'];
+
+			$vars['name'];
+
+			$vars['submitted_day'] = format_date($node->created, 'custom', 'j');
+			$vars['submitted_month'] = format_date($node->created, 'custom', 'M');
+			$vars['submitted_year'] = format_date($node->created, 'custom', 'Y');
+		}
+	}
+```
+
 ### KPR
 
+[KPR](https://api.drupal.org/api/devel/devel.module/function/kpr/7.x-1.x)
+
+```php
+	function kpr($input, $return = FALSE, $name = NULL) {
+	return kprint_r($input, $return, $name);
+	}
+```
 ```php
 	function boilerplate_preprocess_node(&$vars) {
 	// For at printe alle værdier i $vars
