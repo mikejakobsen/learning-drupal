@@ -25,6 +25,37 @@ URL: http://www.mikejakobsen.com/drupal
 
 ## Drupal vs andre CMS systemer
 
+
+### Recap
+
+Sammenligner man Drupal og Umbraco differencierer de sig på en række punkter. Drupal er baseret på [PHP](http://php.net/) hvorimod Umbraco er baseret på C# og [.NET](https://www.microsoft.com/net).
+Drupal er dermed baseret på Lamp-stack (Linux, Apache, MySQL, PHP). 
+
+Abstrakt set er Umbraco Open-Source. Men da Umbraco er baseret på en server løsning, bestående af Windows, IIS, MS-SQL. Der alle er Microsoft produkter, og kræver en Licens. Anser jeg ikke Umbraco for 100% Open Source.
+
+Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på valget mellem Lamp-stack/PHP eller en stack bestående af IIS, MS-SQL.
+
+I forhold til Drupal 7.52 som jeg benytter opstår der dog en problematik, da mange moduler ikke længere understøtter Drupal [7.52](https://www.drupal.org/project/drupal/releases/7.52). Til trods for at Drupal 7.x stadig er mere udbredt end Drupal 8.x. Med 1,062,563 registrerede sider pr. [November 12, 2016](https://www.drupal.org/project/usage/drupal). Kontra Drupal 8.x med 120,530 registrerede brugere.
+
+### Content creation
+
+Anskuer man Drupal og [Umbraco](https://github.com/umbraco/Umbraco-CMS), fra en *daily users* perspektiv. Udmærker Umbraco sig på en række punkter. Da interfacen i høj grad er målrettet den almene brugere, og dermed ikke kræver tekniske forudsætninger for at benytte interfacen. Den gængse bruger vil blive tilknyttet brugertypen *writer* og dermed tilgå en interface der i højgrad ligner gængse applikationer som Microsoft Word og interfacer de møder i deres daglige ageren med en computer.
+
+Umbraco tillader endda at importere rå *.docx* dokumenter fra [Microsoft Word](https://our.umbraco.org/projects/collaboration/import-ms-word-document/), dermed behøver brugeren nærmest ikke at interagere med Umbraco, men kan derimod nøjes med at tilgå allerede familiære programmer som her, Microsoft Word.
+
+![Umbraco Edit](assets/edit-umbraco.png)
+
+
+* Content creation
+* Content management
+* Publishing
+* Presentation
+* Contract & business
+
+- Ease of use -> Kræver basic forstand for.
+
+- Stylesheets. Loades i *boilerplate.info*.
+
 ## Drush
 
 [Drush](https://drushcommands.com/drush-7x/) er en command-line interface, der gør det muligt at interagere med Drupal installationen. Hvor i mod Drupals egen command-line tool primært er til at install samt scaffolde din Drupal applikation.
@@ -153,20 +184,20 @@ For at overføre enkelte variabler til enkelte content-types. Her videreføres f
 
 ```php
 	function kpr($input, $return = FALSE, $name = NULL) {
-	return kprint_r($input, $return, $name);
+	   return kprint_r($input, $return, $name);
 	}
 ```
 ```php
 	function boilerplate_preprocess_node(&$vars) {
-	// For at printe alle værdier i $vars
-	kpr($vars);
+	   // For at printe alle værdier i $vars
+	   kpr($vars);
 	}
 ```
 
 [format_date](https://api.drupal.org/api/drupal/includes!common.inc/function/format_date/7.x) function
 ```php
 format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL)
-``
+```
 
 ### Scheduler
 
