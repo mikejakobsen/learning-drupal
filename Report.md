@@ -26,16 +26,7 @@ URL: http://www.mikejakobsen.com/drupal
 ## Drupal vs andre CMS systemer
 
 
-### Recap
 
-Sammenligner man Drupal og Umbraco differencierer de sig på en række punkter. Drupal er baseret på [PHP](http://php.net/) hvorimod Umbraco er baseret på C# og [.NET](https://www.microsoft.com/net).
-Drupal er dermed baseret på Lamp-stack (Linux, Apache, MySQL, PHP). 
-
-Abstrakt set er Umbraco Open-Source. Men da Umbraco er baseret på en server løsning, bestående af Windows, IIS, MS-SQL. Der alle er Microsoft produkter, og kræver en Licens. Anser jeg ikke Umbraco for 100% Open Source.
-
-# Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på valget mellem Lamp-stack/PHP eller en stack bestående af IIS, MS-SQL.
-
-I forhold til Drupal 7.52 som jeg benytter opstår der dog en problematik, da mange moduler ikke længere understøtter Drupal [7.52](https://www.drupal.org/project/drupal/releases/7.52). Til trods for at Drupal 7.x stadig er mere udbredt end Drupal 8.x. Med 1,062,563 registrerede sider pr. [November 12, 2016](https://www.drupal.org/project/usage/drupal). Kontra Drupal 8.x med 120,530 registrerede brugere.
 
 ### Content creation
 
@@ -45,16 +36,32 @@ Umbraco tillader endda at importere rå *.docx* dokumenter fra [Microsoft Word](
 
 ![Umbraco Edit](assets/edit-umbraco.png)
 
+Anskuer man derimod Drupal fra en *daily users* perspektiv. Kan Drupal derimod godt opleves mangelfuld, da selv det at oprette og administrere *dagligt indhold*. Kan kræve en grundlæggende forståelse for [HTML formattering](http://www.mikejakobsen.com/drupal/filter/tips#overlay-context). Da brugeredn tilgår simple tekstfelter, der ikke har mulighed for umiddelbar formattering, denne formatering; kræver derimod en grundlæggende forståelse for HTML. En integration af [TinyMCE](https://www.drupal.org/project/wysiwyg) eller lignende, er dermed påkrævet for at give brugeren den mulighed.
 
-* Content creation
-* Content management
-* Publishing
-* Presentation
-* Contract & business
 
-- Ease of use -> Kræver basic forstand for.
+## Opbygningen
 
-- Stylesheets. Loades i *boilerplate.info*.
+Grundlæggende differencerer 
+
+**Drupal**
+Mark-up (Content-type)
+Templaten består af den 
+
+**Umbraco**
+Templaten - Markup - .cshtml
+Document type (Mark-up)
+
+### Recap
+
+Sammenligner man Drupal og Umbraco differencierer de sig på en række punkter. Drupal er baseret på [PHP](http://php.net/) hvorimod Umbraco er baseret på C# og [.NET](https://www.microsoft.com/net).
+Drupal er dermed baseret på Lamp-stack (Linux, Apache, MySQL, PHP).
+
+Abstrakt set er Umbraco Open-Source. Men da Umbraco er baseret på en server løsning, bestående af Windows, IIS, MS-SQL. Der alle er Microsoft produkter, og kræver en Licens. Anser jeg ikke Umbraco for 100% Open Source.
+
+Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på valget mellem Lamp-stack/PHP eller en techstack bestående af IIS, MS-SQL.
+
+I forhold til Drupal 7.52 som jeg benytter opstår der dog en problematik, da mange moduler ikke længere understøtter Drupal [7.52](https://www.drupal.org/project/drupal/releases/7.52). Til trods for at Drupal 7.x stadig er mere udbredt end Drupal 8.x. Med 1,062,563 registrerede sider pr. [November 12, 2016](https://www.drupal.org/project/usage/drupal). Kontra Drupal 8.x med 120,530 registrerede brugere.
+
 
 ## Drush
 
@@ -176,7 +183,7 @@ For at overføre enkelte variabler til enkelte content-types. Defineres en [prep
 		}
 	}
 ```
-I eksemplet her ændres dato formatteringen på *artiklerne* samt *interviews* så den tilsvarer den gængse danske formatering. Via  Drupals [format_date](https://api.drupal.or(g/api/drupal/includes!common.inc/function/format_date/7.x) funktion.  De tre variabler tilgåes dernæst på [node.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/node.tpl.php#L22) templaten.
+I eksemplet her ændres dato formatteringen på *artiklerne* samt *interviews* så den tilsvarer den gængse danske formatering. Via  Drupals [format_date](https://api.drupal.org/api/drupal/includes!common.inc/function/format_date/) funktion.  De tre variabler tilgåes dernæst på [node.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/node.tpl.php#L22) templaten.
 
 ```php
 format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL)
@@ -185,9 +192,9 @@ format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langc
 
 
 ### KPR
-En af de mest anvendte *drupal funktioner* ved udarbejdelsen af et theme. Er [KPR](https://api.drupal.org/api/devel/devel.module/function/kpr/7.x-1.x) funktionen. 
+En af de mest anvendte *drupal funktioner* ved udarbejdelsen af et theme. Er [KPR](https://api.drupal.org/api/devel/devel.module/function/kpr/7.x-1.x) funktionen.
 Der i ligmed med [var_dump();](http://php.net/manual/en/function.var-dump.php) funktionen i almen PHP, printer den valgte variable, eller array. For at klarligge hvad elementet indeholder, og dermed finde det ønskede object, man ønsker angivet på siden.
- 
+
 ```php
 	function kpr($input, $return = FALSE, $name = NULL) {
 	   return kprint_r($input, $return, $name);
@@ -207,4 +214,8 @@ Kan *kpr($vars);* dermed benyttes i *preprocess_node(&$vars)* hooken.
 
 ### Scheduler
 
-[Scheduler](https://www.drupal.org/project/scheduler) gør det muligt planlægge indlæg på siden, så administratoren kan planlægge kommende events, som fx. en webhandel der på forhånd vil tilretteligge en kampagne målrettet Black Friday den 25. november.
+[Scheduler](https://www.drupal.org/project/scheduler) gør det muligt at tilretteligge indlæg på siden, så administratoren kan planlægge kommende events, som fx. en shoppingside der på forhånd vil tilrettelægge en kampagne målrettet Black Friday den 25. november.
+
+Scheduler tilføjer dermed muligheden for at tilføje en *udgivelses-dato* til indhold.
+
+![Scheduler](assets/scheduler.gif)
