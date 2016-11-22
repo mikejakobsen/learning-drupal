@@ -38,10 +38,17 @@ Umbraco tillader endda at importere rå *.docx* dokumenter fra [Microsoft Word](
 
 Anskuer man derimod Drupal fra en *daily users* perspektiv. Kan Drupal derimod godt opleves mangelfuld, da selv det at oprette og administrere *dagligt indhold*. Kan kræve en grundlæggende forståelse for [HTML formattering](http://www.mikejakobsen.com/drupal/filter/tips#overlay-context). Da brugeredn tilgår simple tekstfelter, der ikke har mulighed for umiddelbar formattering, denne formatering; kræver derimod en grundlæggende forståelse for HTML. En integration af [TinyMCE](https://www.drupal.org/project/wysiwyg) eller lignende, er dermed påkrævet for at give brugeren den mulighed.
 
+Dog udmærker Drupal sig ved muligheden for selv at udvikle tema til administrationsdelen, og dermed fremhæve funktionalitet i designet, hvis brugeren primært skal tilgå.
+
+## Extendability
+
+For at tilpasse det enkelte CMS til den enkelte side, benyttes der ofte en række plugins. For at tilføje funktionalitet, eller tilpasse allerede eksisterende funktionalitet.
+Her udmærker Drupal sig, grundet et større open source community. Har Drupal en del flere  [modules](https://www.drupal.org/project/project_module), og dermed er det væsentlig nemmere at tilknytte mere funktionalitet til ens Drupal installation. Kontrær Umbraco, der har et relativt lille udbud af [Umbraco Plugins](https://our.umbraco.org/projects/). Dermed vil tilføjelsen af funktionalitet, i høj grad være begrænset til udviklerens kompetencer.
+Dermed formoder jeg at Umbraco, er knap så tilgængeligt for den gængse bruger, da funktionaliteten den enkelte måske påkræver ikke allerede findes, i form af et plugin.
 
 ## Opbygningen
 
-Grundlæggende differencerer 
+Grundlæggende differencerer Umbraco og Drupal, sig på en række punkter rent teknisk. Da Umbraco er baseret på C# samt webforms i begyndelsen, siden version 4.11 har Umbraco dog været baseret på Asp.net MVC.
 
 **Drupal**
 Mark-up (Content-type)
