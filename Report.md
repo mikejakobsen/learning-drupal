@@ -33,7 +33,7 @@ Drupal er dermed baseret på Lamp-stack (Linux, Apache, MySQL, PHP).
 
 Abstrakt set er Umbraco Open-Source. Men da Umbraco er baseret på en server løsning, bestående af Windows, IIS, MS-SQL. Der alle er Microsoft produkter, og kræver en Licens. Anser jeg ikke Umbraco for 100% Open Source.
 
-Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på valget mellem Lamp-stack/PHP eller en stack bestående af IIS, MS-SQL.
+# Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på valget mellem Lamp-stack/PHP eller en stack bestående af IIS, MS-SQL.
 
 I forhold til Drupal 7.52 som jeg benytter opstår der dog en problematik, da mange moduler ikke længere understøtter Drupal [7.52](https://www.drupal.org/project/drupal/releases/7.52). Til trods for at Drupal 7.x stadig er mere udbredt end Drupal 8.x. Med 1,062,563 registrerede sider pr. [November 12, 2016](https://www.drupal.org/project/usage/drupal). Kontra Drupal 8.x med 120,530 registrerede brugere.
 
@@ -161,11 +161,10 @@ Drupal er baseret på en række layout filer. Disse template filer, kan overskri
 
 ### Overriding Theme templates
 
-For at overføre enkelte variabler til enkelte content-types. Her videreføres fx. variablerne tilknyttet *nodes templates.*
+For at overføre enkelte variabler til enkelte content-types. Defineres en [preprocess hook](https://api.drupal.org/api/drupal/includes!theme.inc/function/template_preprocess/7.x) hvis primære rolle er at definere hvilke variabler den enkelte template skal have mulighed for at tilfå [preprocess_node](https://github.com/mikejakobsen/learning-drupal/blob/56003485ebae05abb3c6f8459a34baa83418b908/sites/all/themes/boilerplate/template.php#p3) herunder definerer dermed variablerne tilknyttet [node.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/node.tpl.php) templaten.
 
 ```php
 	function boilerplate_preprocess_node(&$vars) {
-		// Only work with articles
 		if ($vars['type'] == 'article' or 'interview') {
 			$node = $vars['node'];
 
@@ -177,26 +176,33 @@ For at overføre enkelte variabler til enkelte content-types. Her videreføres f
 		}
 	}
 ```
+I eksemplet her ændres dato formatteringen på *artiklerne* samt *interviews* så den tilsvarer den gængse danske formatering. Via  Drupals [format_date](https://api.drupal.or(g/api/drupal/includes!common.inc/function/format_date/7.x) funktion.  De tre variabler tilgåes dernæst på [node.tpl.php](https://github.com/mikejakobsen/learning-drupal/blob/master/sites/all/themes/boilerplate/templates/node.tpl.php#L22) templaten.
+
+```php
+format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL)
+```
+
+
 
 ### KPR
-
-[KPR](https://api.drupal.org/api/devel/devel.module/function/kpr/7.x-1.x)
-
+En af de mest anvendte *drupal funktioner* ved udarbejdelsen af et theme. Er [KPR](https://api.drupal.org/api/devel/devel.module/function/kpr/7.x-1.x) funktionen. 
+Der i ligmed med [var_dump();](http://php.net/manual/en/function.var-dump.php) funktionen i almen PHP, printer den valgte variable, eller array. For at klarligge hvad elementet indeholder, og dermed finde det ønskede object, man ønsker angivet på siden.
+ 
 ```php
 	function kpr($input, $return = FALSE, $name = NULL) {
 	   return kprint_r($input, $return, $name);
 	}
 ```
+For at visualisere alle variabler tilknyttet node templaten.
+Kan *kpr($vars);* dermed benyttes i *preprocess_node(&$vars)* hooken.
+
+![KPR](assets/kpr.png)
+
 ```php
 	function boilerplate_preprocess_node(&$vars) {
 	   // For at printe alle værdier i $vars
 	   kpr($vars);
 	}
-```
-
-[format_date](https://api.drupal.org/api/drupal/includes!common.inc/function/format_date/7.x) function
-```php
-format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL)
 ```
 
 ### Scheduler
