@@ -48,7 +48,7 @@ Dermed formoder jeg at Umbraco, er knap så tilgængeligt for den gængse bruger
 
 ## Opbygningen
 
-Grundlæggende differencerer Umbraco og Drupal, sig på en række punkter rent teknisk. Da Umbraco er baseret på C# samt webforms i begyndelsen, siden version 4.11 har Umbraco dog været baseret på Asp.net MVC. Hvorimod Drupal er baseret på PHP. 
+Grundlæggende differencerer Umbraco og Drupal, sig på en række punkter rent teknisk. Da Umbraco er baseret på C# samt webforms i begyndelsen, siden version 4.11 har Umbraco dog været baseret på Asp.net MVC. Hvorimod Drupal er baseret på PHP.
 
 Ligeledes er den gængse opbygning af Drupal og Umbraco bruger genererede indhold radikalt forskelligt.
 
@@ -227,4 +227,4 @@ Kan *kpr($vars);* dermed benyttes i *preprocess_node(&$vars)* hooken.
 
 Scheduler tilføjer dermed muligheden for at tilføje en *udgivelses-dato* til indhold.
 
-![Scheduler](assets/scheduler.gif)
+![Scheduler](assets/scheduler.png)
