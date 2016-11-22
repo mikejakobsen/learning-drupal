@@ -36,7 +36,7 @@ Umbraco tillader endda at importere rå *.docx* dokumenter fra [Microsoft Word](
 
 ![Umbraco Edit](assets/edit-umbraco.png)
 
-Anskuer man derimod Drupal fra en *daily users* perspektiv. Kan Drupal derimod godt opleves mangelfuld, da selv det at oprette og administrere *dagligt indhold*. Kan kræve en grundlæggende forståelse for [HTML formattering](http://www.mikejakobsen.com/drupal/filter/tips#overlay-context). Da brugeredn tilgår simple tekstfelter, der ikke har mulighed for umiddelbar formattering, denne formatering; kræver derimod en grundlæggende forståelse for HTML. En integration af [TinyMCE](https://www.drupal.org/project/wysiwyg) eller lignende, er dermed påkrævet for at give brugeren den mulighed.
+Anskuer man derimod Drupal fra en *daily users* perspektiv. Kan Drupal derimod godt opleves mangelfuld, da selv det at oprette og administrere *dagligt indhold*. Kan kræve en grundlæggende forståelse for [HTML formattering](http://www.mikejakobsen.com/drupal/filter/tips#overlay-context). Da brugeredn tilgår simple tekstfelter, der ikke har mulighed for umiddelbar formattering, denne formatering; kræver derimod en grundlæggende forståelse for HTML. En integration af [TinyMCE](https://www.drupal.org/project/wysiwyg) eller lignende, er dermed påkrævet for at give brugeren den mulighed. Dog kan det påpeges at store selskaber som [JYSK](www.jysk.dk), [TV 2 Sporten](www.tv2sporten.dk) og [Berlingske](www.berlingske.dk). Kilde: [Novicell](https://www.novicell.dk/hvad-kan-vi/softwareudvikling/cms-platforme/drupal).
 
 Dog udmærker Drupal sig ved muligheden for selv at udvikle tema til administrationsdelen, og dermed fremhæve funktionalitet i designet, hvis brugeren primært skal tilgå.
 
@@ -48,15 +48,17 @@ Dermed formoder jeg at Umbraco, er knap så tilgængeligt for den gængse bruger
 
 ## Opbygningen
 
-Grundlæggende differencerer Umbraco og Drupal, sig på en række punkter rent teknisk. Da Umbraco er baseret på C# samt webforms i begyndelsen, siden version 4.11 har Umbraco dog været baseret på Asp.net MVC.
+Grundlæggende differencerer Umbraco og Drupal, sig på en række punkter rent teknisk. Da Umbraco er baseret på C# samt webforms i begyndelsen, siden version 4.11 har Umbraco dog været baseret på Asp.net MVC. Hvorimod Drupal er baseret på PHP. 
 
-**Drupal**
-Mark-up (Content-type)
-Templaten består af den 
+Ligeledes er den gængse opbygning af Drupal og Umbraco bruger genererede indhold radikalt forskelligt.
 
-**Umbraco**
-Templaten - Markup - .cshtml
-Document type (Mark-up)
+Umbracos grundlæggende *markup* og dermed layout, er baseret på en [Razor](https://www.asp.net/web-pages/overview/getting-started/introducing-razor-syntax-c) template, og dermed en *.cshtml* der gør det muligt at inkorporere *server-side* kode, og dermed variabler eller deslige fra backend delen.
+
+*Document Typen* i Umbracos backend definerer dernæst hvilke *properties* der benyttes til den gågældende layout template.
+
+I forlængelse af det, er Drupal baseret på en *content-type* i backend delen der definerer det enkelte indhold. Ud fra denne *content-type* defineres dernæst indhold, matchende den pågældende *content-type*. Der dermed agerer *model* for det pågældende indhold.
+
+I forhold til layoutet, og *markup* af dette indhold adskiller Drupal sig en del fra Umbraco. Da *markup* og dermed layoutet for Drupal defineres af det enkelte tema, og dermed en *tpl.php* fil i temaet.
 
 ### Recap
 
