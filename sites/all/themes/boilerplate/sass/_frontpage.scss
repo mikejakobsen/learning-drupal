@@ -6,5 +6,8 @@
   }
   .frontpage-content {
     text-align: center;
+    .frontpage-image img {
+      @include border-radius(5);
+    }
   }
 }

@@ -98,7 +98,7 @@ Cacheing er en stor del af et CMS som Drupal, for at applikationen kan interager
 
 [NoCache](https://www.drupal.org/project/nocache) er et module, der gør det muligt at deaktivere den konstante cacheing af indholdet, under udvikling. NoCache aktiveres via Drush.
 
-![Url](assets/nocache.png)
+![Url](assets/nocache.gif)
 
 ## Theme
 
@@ -164,6 +164,10 @@ For at overføre enkelte variabler til enkelte content-types. Her videreføres f
 ```
 
 [format_date](https://api.drupal.org/api/drupal/includes!common.inc/function/format_date/7.x) function
-```
+```php
 format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL)
 ``
+
+### Scheduler
+
+[Scheduler](https://www.drupal.org/project/scheduler) gør det muligt planlægge indlæg på siden, så administratoren kan planlægge kommende events, som fx. en webhandel der på forhånd vil tilretteligge en kampagne målrettet Black Friday den 25. november.

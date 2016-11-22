@@ -48,15 +48,15 @@
 <!-- ______________________ Content _______________________ -->
   <div id="main" class="clearfix" role="main">
     <div class="frontpage">
-	  <div class="frontpage-inner">
-		<div class="frontpage-content">
-		  <?php print render($page["content"]["system_main"]["nodes"][36]["body"]["#object"]->body["und"][0]["safe_value"]); ?>
-			<div id="content-area">
-				<?php print render($page['content']["system_main"]["nodes"][36]["field_image"]); ?>
-			</div>
-		</div>
-	  </div>
-	</div> <!-- /frontpage-inner /content -->
+      <div class="frontpage-inner">
+      <div class="frontpage-content">
+        <?php print render($page["content"]["system_main"]["nodes"][36]["body"]["#object"]->body["und"][0]["safe_value"]); ?>
+        <div class="frontpage-image">
+          <?php print render($page['content']["system_main"]["nodes"][36]["field_image"]); ?>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /frontpage-inner /content -->
 
   <!-- ______________________ FOOTER _______________________ -->
     <?php if ($page['footer']): ?>
