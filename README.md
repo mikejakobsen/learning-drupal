@@ -1,14 +1,9 @@
-
-![alt tag](http://www.mikejakobsen.com/mike.png)
-
 # Drupal 7.5.1
 
 As Roma fan club school project using Drupal 7.5.2
 
-
-
-* [Todo](todo.md)
 * [Report](Report.md)
+* [Todo](todo.md)
 * [Requirements(PDF)](assets/D.E.MandatoryAssignment2DrupalandCMScomparisons.pdf)
 
 ###Compile Scss

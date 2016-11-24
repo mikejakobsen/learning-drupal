@@ -14,19 +14,18 @@ URL: http://www.mikejakobsen.com/drupal
 
 
 ## Summary
+
 * Drupal
 * Drupal vs andre CMS systemer
 * Drush
 * Extra module
  * Facebook
+ * Coffee
+ * NoCache
+ * Scheduler
 * Theme
 
-## Drupal
-
-## Drupal vs andre CMS systemer
-
-
-
+# Drupal vs Umbraco
 
 ### Content creation
 
@@ -40,13 +39,25 @@ Anskuer man derimod Drupal fra en *daily users* perspektiv. Kan Drupal derimod g
 
 Dog udmærker Drupal sig ved muligheden for selv at udvikle tema til administrationsdelen, og dermed fremhæve funktionalitet i designet, hvis brugeren primært skal tilgå.
 
-## Extendability
+Anskuer man dermed de to CMS'er under den antagelse, at de skal benyttes af en mellem-stor til stor virksomhed. Vil Umbraco dermed klart være at foretrække.
+
+### Metadata
+
+I forhold til *metadata*, som i denne sammenhæng skal forståes som selve kollokationer, og dermed en merværdi man selv tilføjer indholdet. 
+
+[James, Kalback]<a name="kalbach">1</a>: “By attaching metadata to the [..] content, finding it becomes easier.”
+
+*This also includes keyword indexes, subject taxonomies and topic maps.*
+
+<sup>[1](#kalbach)</sup>
+
+### Extendability
 
 For at tilpasse det enkelte CMS til den enkelte side, benyttes der ofte en række plugins. For at tilføje funktionalitet, eller tilpasse allerede eksisterende funktionalitet.
 Her udmærker Drupal sig, grundet et større open source community. Har Drupal en del flere  [modules](https://www.drupal.org/project/project_module), og dermed er det væsentlig nemmere at tilknytte mere funktionalitet til ens Drupal installation. Kontrær Umbraco, der har et relativt lille udbud af [Umbraco Plugins](https://our.umbraco.org/projects/). Dermed vil tilføjelsen af funktionalitet, i høj grad være begrænset til udviklerens kompetencer.
 Dermed formoder jeg at Umbraco, er knap så tilgængeligt for den gængse bruger, da funktionaliteten den enkelte måske påkræver ikke allerede findes, i form af et plugin.
 
-## Opbygningen
+### Opbygningen
 
 Grundlæggende differencerer Umbraco og Drupal, sig på en række punkter rent teknisk. Da Umbraco er baseret på C# samt webforms i begyndelsen, siden version 4.11 har Umbraco dog været baseret på Asp.net MVC. Hvorimod Drupal er baseret på PHP.
 
@@ -64,10 +75,11 @@ I forhold til layoutet, og *markup* af dette indhold adskiller Drupal sig en del
 
 Sammenligner man Drupal og Umbraco differencierer de sig på en række punkter. Drupal er baseret på [PHP](http://php.net/) hvorimod Umbraco er baseret på C# og [.NET](https://www.microsoft.com/net).
 Drupal er dermed baseret på Lamp-stack (Linux, Apache, MySQL, PHP).
+*NB: Linux og Apache er ikke et krav, men det generelt anvendte*
 
-Abstrakt set er Umbraco Open-Source. Men da Umbraco er baseret på en server løsning, bestående af Windows, IIS, MS-SQL. Der alle er Microsoft produkter, og kræver en Licens. Anser jeg ikke Umbraco for 100% Open Source.
+Abstrakt set er Umbraco Open-Source. Men da Umbraco er baseret på en server løsning, bestående af Windows, IIS, MS-SQL. Der alle er Microsoft produkter, og dermed kræver en Licens. Anser jeg ikke Umbraco for 100% Open Source.
 
-Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på valget mellem Lamp-stack/PHP eller en techstack bestående af IIS, MS-SQL.
+Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på valget mellem Lamp-stack/PHP eller en *tech-stack* bestående af IIS, MS-SQL. Dermed vil der være flere driftmæssige omkostninger ved sidst nævnte *tech-stack*.
 
 I forhold til Drupal 7.52 som jeg benytter opstår der dog en problematik, da mange moduler ikke længere understøtter Drupal [7.52](https://www.drupal.org/project/drupal/releases/7.52). Til trods for at Drupal 7.x stadig er mere udbredt end Drupal 8.x. Med 1,062,563 registrerede sider pr. [November 12, 2016](https://www.drupal.org/project/usage/drupal). Kontra Drupal 8.x med 120,530 registrerede brugere.
 
@@ -120,8 +132,8 @@ Modulet sammenligner dernæst e-mailen anvendt til Facebook profilen. Hvis Drupa
 
 | uid | name         | pass                                                    | mail                                  | theme | signature | signature_format | created    | access     | login      | status | timezone      | language | picture | init              | data                       |
 |-----|--------------|---------------------------------------------------------|---------------------------------------|-------|-----------|------------------|------------|------------|------------|--------|---------------|----------|---------|-------------------|----------------------------|
-| 1   | mike         | $S$DbON4.JDjSrdaELOslNUwJN9/6Id/V/XWbNRk.ORw26QWPQRFot5 | mike@jakobsen.dk                      |       |           | NULL             | 1477826754 | 1479130717 | 1479119429 | 1      | Europe/Berlin |          | 0       | mike@jakobsen.dk  | b:0;                       |
-| 41  | Martin Hjord | $S$DwBTippt6EmUvz2jNkPhiAYoULIBwYsdS9/ADRl.dJZT4kXzthA1 | hjorden@gmail.com                     |       |           | filtered_html    | 1479120328 | 1479120758 | 1479120492 | 1      |               |          | 45      | hjorden@gmail.com | a:1:{s:7:\contact\";i:1;}" |
+| 1   | mike         | $S$DbON4.JMjSrdaELOslNUwJN9/6Id/V/XWbNRk.ORw26QWPQRFot5 | mike@jakobsen.dk                      |       |           | NULL             | 1477826752 | 1479130719 | 1479119422 | 1      | Europe/Berlin |          | 0       | mike@jakobsen.dk  | b:0;                       |
+| 41  | Martin Hjord | $S$DwBTippl6FmUvz2jNkPhiAYoULIBwYsdS9/ADRl.dJZT4kXzthA1 | hjorden@gmail.com                     |       |           | filtered_html    | 1479120325 | 1479120752 | 1479120493 | 1      |               |          | 45      | hjorden@gmail.com | a:1:{s:7:\contact\";i:1;}" |
 
 
 ### Coffee
@@ -147,6 +159,13 @@ Cacheing er en stor del af et CMS som Drupal, for at applikationen kan interager
 
 ![Url](assets/nocache.gif)
 
+### Scheduler
+
+[Scheduler](https://www.drupal.org/project/scheduler) gør det muligt at tilretteligge indlæg på siden, så administratoren kan planlægge kommende events, som fx. en shoppingside der på forhånd vil tilrettelægge en kampagne målrettet Black Friday den 25. november.
+
+Scheduler tilføjer dermed muligheden for at tilføje en *udgivelses-dato* til indhold.
+
+![Scheduler](assets/scheduler.png)
 ## Theme
 
 For at bryde med det generiske udseende som pryder Bartik temaet. Benytter jeg en [boilerplate](https://www.drupal.org/project/boilerplate) til et theme. En boilerplate skal i denne sammenhæng forståes som et meget minimalistisk tema. Der dermed er nemmere at modificere.
@@ -221,10 +240,3 @@ Kan *kpr($vars);* dermed benyttes i *preprocess_node(&$vars)* hooken.
 	}
 ```
 
-### Scheduler
-
-[Scheduler](https://www.drupal.org/project/scheduler) gør det muligt at tilretteligge indlæg på siden, så administratoren kan planlægge kommende events, som fx. en shoppingside der på forhånd vil tilrettelægge en kampagne målrettet Black Friday den 25. november.
-
-Scheduler tilføjer dermed muligheden for at tilføje en *udgivelses-dato* til indhold.
-
-![Scheduler](assets/scheduler.png)
