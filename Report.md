@@ -1,10 +1,11 @@
 # Report
 
-![Mike](http://www.mikejakobsen.com/mike.png)
 
-
-Mike Jakobsen
 URL: http://www.mikejakobsen.com/drupal
+
+Opgaven læses bedst direkte fra Gitbook
+
+https://mikejakobsen.gitbooks.io/report/content/
 
 ## Login
 
@@ -12,18 +13,23 @@ URL: http://www.mikejakobsen.com/drupal
 |--------------------|----------|
 | mike               | secret   |
 
+## Github Repository
+
+https://github.com/mikejakobsen/learning-drupal
+
 
 ## Summary
 
-* Drupal
 * Drupal vs andre CMS systemer
-* Drush
+* Drupal
+ * Taksonomi
+ * Drush
 * Extra module
  * Facebook
  * Coffee
  * NoCache
  * Scheduler
-* Theme
+* Theme/Drupal Opbygning
 
 # Drupal vs Umbraco
 
@@ -43,8 +49,8 @@ Anskuer man dermed de to CMS'er under den antagelse, at de skal benyttes af en m
 
 ### Metadata
 
-I forhold til *metadata*, som i denne sammenhæng skal forståes som selve kollokationer, og dermed det merindhold en udgiver selv tilføjer indholdet. Udmærker Umbraco sig ligeledes kontrær Drupal, da Umbraco som udgangspunkt tillader brugeren at tilføje en *MetaDescription* samt *MetaKeywords*. Og dermed imødekomme en folksonomi tilgang, der hjælper søgemaskiner med at indeksere indholdet, og dermed gøre det nemme for målgruppen, at finde. 
-En mulighed Drupal, som udgangspunkt ikke tillader. 
+I forhold til *metadata*, som i denne sammenhæng skal forståes som selve kollokationer, og dermed det merindhold en udgiver selv tilføjer indholdet. Udmærker Umbraco sig ligeledes kontrær Drupal, da Umbraco som udgangspunkt tillader brugeren at tilføje en *MetaDescription* samt *MetaKeywords*. Og dermed imødekomme en folksonomi tilgang, der hjælper søgemaskiner med at indeksere indholdet, og dermed gøre det nemme for målgruppen, at finde.
+En mulighed Drupal, som udgangspunkt ikke tillader.
 
 “By attaching metadata to the [..] content, finding it becomes easier.” [Kalbach, James (2007) Designing web navigation. Første udgave. O'Reilly Media - Side 317]
 
@@ -81,6 +87,28 @@ Grundlæggende set vil valget mellem Drupal og Umbraco dermed være baseret på 
 
 I forhold til Drupal 7.52 som jeg benytter opstår der dog en problematik, da mange moduler ikke længere understøtter Drupal [7.52](https://www.drupal.org/project/drupal/releases/7.52). Til trods for at Drupal 7.x stadig er mere udbredt end Drupal 8.x. Med 1,062,563 registrerede sider pr. [November 12, 2016](https://www.drupal.org/project/usage/drupal). Kontra Drupal 8.x med 120,530 registrerede brugere.
 
+# Drupal
+
+##  Taksonomi
+
+For at dynamisk indeksere *Interviews* samt de enkelte *Match Reviews*, og dermed kategorisere indhold for den besøgende.
+
+Benyttes en Drupal *"Taxonomy"*, der ud fra en defineret *vocabulary* tillader udgiveren at indeksere indholdet, under et eller flere af disse tags. For på den måde at tillade den besøgende at tilgå, lignende indhold under dette tag.
+
+I forhold til *Interviews* benyttes en åben taksonomi. En åben taksonomi skal i denne sammenhæng, forståes som muligheden for udgiver selv at tilføje nye *tags* til taksonomien.
+
+De predefinerede tags, agerer *auto-complete*, dermed bliver udgiveren opfordret til at benytte, et af de predefinerede tags, men ikke indskrænket til udelukkende at benytte disse, hvis andre er mere relevante.
+
+I forhold til *Match Reviews (Events)* benyttes en lukket taksonomi, dermed er udgiveren indskrænket til udelukkende at benytte de predefinerede tags. Dermed undgår man det *James Kalbach* definerer som *Meta-noise*.
+
+![Taksonomi](assets/taksonomi.png)
+
+*Meta-noise* omfatter ifølge Kalbach ord der er stavet forkert, eller ord der ikke har nogen mening for andre. Som for eksempel. (#Mintegning eller #minpassion). En tendens man i højgrad oplever på *hashtag* baserede sociale netværker.
+
+*“Such tags don’t contribute to the broader use of the tagging system, but effectively track ressources for a given user or group”* [*2].
+
+[*2 Kalbach, James (2007) Designing web navigation. Første udgave. O'Reilly Media - Side 328]
+
 
 ## Drush
 
@@ -105,26 +133,6 @@ drush user-create Mike --mail="mike@jakobsen.dk" --password="secret"
 
 ### Backup af databasen
 ![Drush SQL-dump](assets/sql-dump.gif)
-
-##  Taksonomi
-
-For at dynamisk indeksere *Interviews* samt de enkelte *Match Reviews*, og dermed kategorisere indhold for den besøgende. 
-
-Benyttes en Drupal *"Taxonomy"*, der ud fra en defineret *vocabulary* tillader udgiveren at indeksere indholdet, under et eller flere af disse tags. For på den måde at tillade den besøgende at tilgå, lignende indhold under dette tag.
-
-I forhold til *Interviews* benyttes en åben taksonomi. En åben taksonomi skal i denne sammenhæng, forståes som muligheden for udgiver selv at tilføje nye *tags* til taksonomien.
-
-De predefinerede tags, agerer *auto-complete*, dermed bliver udgiveren opfordret til at benytte, et af de predefinerede tags, men ikke indskrænket til udelukkende at benytte disse, hvis andre er mere relevante.
-
-I forhold til *Match Reviews (Events)* benyttes en lukket taksonomi, dermed er udgiveren indskrænket til udelukkende at benytte de predefinerede tags. Dermed undgår man det *James Kalbach* definerer som *Meta-noise*.
-
-![Taksonomi](assets/taksonomi.png)
-
-*Meta-noise* omfatter ifølge Kalbach ord der er stavet forkert, eller ord der ikke har nogen mening for andre. Som for eksempel. (#Mintegning eller #minpassion). En tendens man i højgrad oplever på *hashtag* baserede sociale netværker.
-
-*“Such tags don’t contribute to the broader use of the tagging system, but effectively track ressources for a given user or group”* [*2].
-
-[*2 Kalbach, James (2007) Designing web navigation. Første udgave. O'Reilly Media - Side 328]
 
 
 ## Extra moduler
@@ -235,9 +243,6 @@ I eksemplet her ændres dato formatteringen på *artiklerne* samt *interviews* s
 ```php
 format_date($timestamp, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL)
 ```
-
-
-
 ### KPR
 En af de mest anvendte *drupal funktioner* ved udarbejdelsen af et theme. Er [KPR](https://api.drupal.org/api/devel/devel.module/function/kpr/7.x-1.x) funktionen.
 Der i ligmed med [var_dump();](http://php.net/manual/en/function.var-dump.php) funktionen i almen PHP, printer den valgte variable, eller array. For at klarligge hvad elementet indeholder, og dermed finde det ønskede object, man ønsker angivet på siden.
