@@ -43,13 +43,13 @@ Anskuer man dermed de to CMS'er under den antagelse, at de skal benyttes af en m
 
 ### Metadata
 
-I forhold til *metadata*, som i denne sammenhæng skal forståes som selve kollokationer, og dermed en merværdi man selv tilføjer indholdet. 
+I forhold til *metadata*, som i denne sammenhæng skal forståes som selve kollokationer, og dermed det merindhold en udgiver selv tilføjer indholdet. Udmærker Umbraco sig ligeledes kontrær Drupal, da Umbraco som udgangspunkt tillader brugeren at tilføje en *MetaDescription* samt *MetaKeywords*. Og dermed imødekomme en folksonomi tilgang, der hjælper søgemaskiner med at indeksere indholdet, og dermed gøre det nemme for målgruppen, at finde.
 
-[James, Kalback]<a name="kalbach">1</a>: “By attaching metadata to the [..] content, finding it becomes easier.”
+
+“By attaching metadata to the [..] content, finding it becomes easier.” [Kalbach, James (2007) Designing web navigation. Første udgave. O'Reilly Media - Side 317]
 
 *This also includes keyword indexes, subject taxonomies and topic maps.*
 
-<sup>[1](#kalbach)</sup>
 
 ### Extendability
 
