@@ -109,7 +109,7 @@ function boilerplate_preprocess_node(&$vars) {
 function boilerplate_preprocess_user_profile(&$vars) {
   $account = $vars['elements']['#account'];
 
-  kpr($vars);
+  /* kpr($vars); */
 
   // Helpful $user_profile variable for templates.
   foreach (element_children($vars['elements']) as $key) {
